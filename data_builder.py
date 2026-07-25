@@ -75,7 +75,6 @@ def get_news_summary():
         
         news_items = []
         titles = []
-        # 뉴스를 최대 20개까지 수집
         for item in root.findall('.//item')[:20]:
             title = item.find('title').text
             link = item.find('link').text
@@ -96,17 +95,16 @@ def get_news_summary():
         return [{"text": "뉴스 데이터를 불러오지 못했습니다.", "link": "https://google.com"}]
 
 def get_english_opic():
-    prompt = "OPIc AL 등급 달성을 위해 유용한 '오늘의 원어민 영어 표현' 1개를 선정하고, 그 의미와 2~3줄의 상황별 대화문 예시를 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
+    prompt = "OPIc AL 등급 달성을 위해 유용한 원어민 영어 표현 5개를 선정하고, 각각의 표현, 의미, 간단한 대화문 예시를 번호 매겨서 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
     res = ask_gemini_direct(prompt)
-    return res if res else "💡 오늘의 표현: I haven't gotten around to it yet.\n의미: 아직 거기까지 신경 쓸 겨를이 없었어요."
+    return res if res else "1. I haven't gotten around to it yet - 아직 거기까지 신경 쓸 겨를이 없었어요."
 
 def get_japanese_sjpt():
-    prompt = "SJPT 레벨 7 이상을 위한 '오늘의 고급 일본어 표현' 1개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 작성해줘. 마크다운 없이 텍스트로만 작성해."
+    prompt = "SJPT 레벨 7 이상을 위한 고급 일본어 표현 5개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 번호 매겨서 작성해줘. 마크다운 없이 텍스트로만 작성해."
     res = ask_gemini_direct(prompt)
-    return res if res else "💡 오늘의 표현: 差し支えなければ\n의미: 지장이 없으시다면"
+    return res if res else "1. 差し支えなければ (사시츠카에 나케레바) - 지장이 없으시다면"
 
 def get_tech_papers():
-    # 논문을 최대 20개까지 가져오도록 max_results를 20으로 변경
     url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending"
     try:
         response = urllib.request.urlopen(url)
@@ -139,10 +137,7 @@ def get_tech_papers():
 
 def main():
     print("데이터 수집을 시작합니다...")
-    
-    # UTC 기준 시간에 9시간을 더해 한국 시간(KST) 계산
     kst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
-    
     data = {
         "last_updated": kst_now.strftime("%Y-%m-%d %H:%M:%S"),
         "stocks": get_stocks(),
