@@ -75,20 +75,20 @@ def get_news_summary():
         
         news_items = []
         titles = []
-        for item in root.findall('.//item')[:10]:
+        # 뉴스를 최대 20개까지 수집
+        for item in root.findall('.//item')[:20]:
             title = item.find('title').text
             link = item.find('link').text
             titles.append(title)
             news_items.append({"title": title, "link": link})
         
-        prompt = f"다음은 오늘의 주요 뉴스 헤드라인입니다. 가장 중요한 핵심 이슈 5가지를 뽑아서 1줄씩 요약해주세요.\n\n헤드라인:\n{chr(10).join(titles)}"
+        prompt = f"다음은 오늘의 주요 뉴스 헤드라인들입니다. 가장 중요한 핵심 이슈들을 분석하여 대표적인 요약문 20개를 작성해줘. 각 요약문은 줄바꿈으로 구분해줘.\n\n헤드라인:\n{chr(10).join(titles)}"
         ai_summary = ask_gemini_direct(prompt)
         
-        summaries = [line.strip() for line in ai_summary.strip().split('\n') if line.strip()] if ai_summary else [t for t in titles[:5]]
+        summaries = [line.strip() for line in ai_summary.strip().split('\n') if line.strip()] if ai_summary else [t for t in titles]
         
-        # 요약문과 첫 번째 뉴스 링크 매칭 형태 반환
         result = []
-        for i, text in enumerate(summaries[:5]):
+        for i, text in enumerate(summaries[:20]):
             link = news_items[i]["link"] if i < len(news_items) else "https://news.google.com"
             result.append({"text": text, "link": link})
         return result
@@ -106,7 +106,8 @@ def get_japanese_sjpt():
     return res if res else "💡 오늘의 표현: 差し支えなければ\n의미: 지장이 없으시다면"
 
 def get_tech_papers():
-    url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending"
+    # 논문을 최대 20개까지 가져오도록 max_results를 20으로 변경
+    url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending"
     try:
         response = urllib.request.urlopen(url)
         root = ET.fromstring(response.read())
@@ -119,17 +120,16 @@ def get_tech_papers():
             summary = entry.find('arxiv:summary', ns).text.strip().replace('\n', ' ')
             id_url = entry.find('arxiv:id', ns).text.strip()
             paper_list.append({"title": title, "link": id_url})
-            papers_text.append(f"제목: {title}\n초록: {summary[:200]}...")
+            papers_text.append(f"제목: {title}\n초록: {summary[:100]}...")
         
         if not paper_list:
-            return []
+            return {"summary": "최근 논문 검색 결과가 없습니다.", "papers": []}
             
-        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문 3편입니다. 이를 바탕으로 최신 기술 트렌드를 한국어로 3~4문장으로 요약해줘.\n\n{chr(10).join(papers_text)}"
+        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문들입니다. 이를 바탕으로 전반적인 최신 기술 트렌드를 한국어로 4~5문장으로 요약해줘.\n\n{chr(10).join(papers_text[:10])}"
         ai_summary = ask_gemini_direct(prompt)
         
         summary_text = ai_summary if ai_summary else "최신 반도체 계측 관련 논문 트렌드 분석입니다."
         
-        # 논문 요약 전체와 첫 번째 논문 링크, 혹은 개별 링크 구조로 반환
         return {
             "summary": summary_text,
             "papers": paper_list
