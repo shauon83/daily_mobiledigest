@@ -8,12 +8,26 @@ import google.generativeai as genai
 import requests
 import math
 
-# 1. Gemini API 설정 (최신 라이브러리에서 가장 안정적인 1.5-flash 사용)
+# 1. Gemini API 설정 및 모델 자동 탐색 (404 에러 원천 차단)
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-flash')
+
+selected_model = 'gemini-pro' # 안전한 기본값
+try:
+    for m in genai.list_models():
+        if 'generateContent' in m.supported_generation_methods:
+            model_name = m.name.replace('models/', '')
+            selected_model = model_name
+            # 가볍고 빠른 flash 계열 모델이 사용 가능하다면 최우선 선택
+            if 'flash' in model_name:
+                break
+except Exception as e:
+    print(f"모델 탐색 중 오류 발생 (기본값 사용): {e}")
+
+model = genai.GenerativeModel(selected_model)
+print(f"선택된 AI 모델: {selected_model}")
 
 # 2. 야후 파이낸스 우회 세션
 session = requests.Session()
@@ -35,9 +49,7 @@ def get_stocks():
             t = yf.Ticker(ticker, session=session)
             hist = t.history(period="5d")
             if not hist.empty:
-                # NaN 값을 완벽하게 제거하여 JSON 에러 방지
                 closes = [x for x in hist['Close'].tolist() if not math.isnan(x)]
-                
                 if len(closes) > 0:
                     today_price = closes[-1]
                     prev_price = closes[-2] if len(closes) > 1 else closes[-1]
