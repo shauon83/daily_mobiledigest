@@ -139,8 +139,12 @@ def get_tech_papers():
 
 def main():
     print("데이터 수집을 시작합니다...")
+    
+    # UTC 기준 시간에 9시간을 더해 한국 시간(KST) 계산
+    kst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+    
     data = {
-        "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "last_updated": kst_now.strftime("%Y-%m-%d %H:%M:%S"),
         "stocks": get_stocks(),
         "exchange_rates": get_exchange_rates(),
         "news": get_news_summary(),
