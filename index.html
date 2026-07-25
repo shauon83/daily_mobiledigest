@@ -35,8 +35,8 @@
 
             <!-- 2. 뉴스 탭 -->
             <div id="tab-news" class="tab-content">
-                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">📰 오늘의 핵심 뉴스</h2>
-                <div id="news-container" class="space-y-4"></div>
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">📰 오늘의 핵심 뉴스 (20선)</h2>
+                <div id="news-container" class="space-y-3"></div>
             </div>
 
             <!-- 3. 어학 탭 -->
@@ -50,10 +50,10 @@
 
             <!-- 4. 기술 논문 탭 -->
             <div id="tab-tech" class="tab-content">
-                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🔬 반도체 계측 최신 논문</h2>
-                <div id="tech-summary" class="bg-gray-50 p-4 rounded-lg whitespace-pre-wrap text-sm leading-relaxed border border-gray-200 mb-4"></div>
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🔬 반도체 계측 트렌드</h2>
+                <div id="tech-summary" class="bg-gray-50 p-4 rounded-lg whitespace-pre-wrap text-sm leading-relaxed border border-gray-200 mb-6"></div>
                 
-                <h3 class="text-md font-bold mb-2">원문 논문 링크</h3>
+                <h3 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">📚 최신 논문 리스트 (20선)</h3>
                 <div id="tech-papers-list" class="space-y-2"></div>
             </div>
         </main>
@@ -107,12 +107,12 @@
                 }
                 document.getElementById('rates-container').innerHTML = ratesHtml;
 
-                // 뉴스 (요약 + [Link] 하이퍼링크)
+                // 뉴스 (20개)
                 let newsHtml = '';
                 if (Array.isArray(data.news)) {
-                    newsHtml = data.news.map(item => `
+                    newsHtml = data.news.map((item, index) => `
                         <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm leading-relaxed flex justify-between items-start gap-2">
-                            <span>• ${item.text}</span>
+                            <span><strong class="text-blue-600">${index + 1}.</strong> ${item.text}</span>
                             <a href="${item.link}" target="_blank" class="text-blue-600 font-bold shrink-0 bg-blue-50 px-2 py-1 rounded border border-blue-200 hover:bg-blue-100">[Link]</a>
                         </div>
                     `).join('');
@@ -123,12 +123,12 @@
                 document.getElementById('english-container').innerText = data.english_opic;
                 document.getElementById('japanese-container').innerText = data.japanese_sjpt;
 
-                // 기술 논문
+                // 기술 논문 (20개)
                 if (data.tech_papers && typeof data.tech_papers === 'object') {
                     document.getElementById('tech-summary').innerText = data.tech_papers.summary;
-                    let papersHtml = data.tech_papers.papers.map(p => `
-                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100 text-xs">
-                            <span class="font-medium truncate max-w-[260px]">${p.title}</span>
+                    let papersHtml = data.tech_papers.papers.map((p, index) => `
+                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100 text-xs gap-2">
+                            <span class="font-medium truncate"><strong class="text-blue-600">${index + 1}.</strong> ${p.title}</span>
                             <a href="${p.link}" target="_blank" class="text-blue-600 font-bold shrink-0 bg-blue-50 px-2 py-1 rounded border border-blue-200 hover:bg-blue-100">[Link]</a>
                         </div>
                     `).join('');
