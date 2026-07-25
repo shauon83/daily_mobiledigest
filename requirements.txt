@@ -1,0 +1,4 @@
+yfinance==0.2.36
+google-generativeai==0.3.2
+requests==2.31.0
+beautifulsoup4==4.12.3
