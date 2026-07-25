@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25 13:32:20",
+  "last_updated": "2026-07-25 13:37:49",
   "stocks": {
     "삼성전자": {
       "price": 249500.0,
@@ -63,9 +63,13 @@
     "EUR/KRW": 1658.3
   },
   "news": [
-    "뉴스 요약 실패: 모든 AI 모델 호출 실패: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+    "📰 “유시민 저주에 왜 침묵하나” “난 탈당은 안 해”···여 당권후보 3인 ‘설전’ - 경향신문",
+    "📰 유럽 산불에 20만 명 대피…국가비상사태 선포·EU에 ‘SOS’ - KBS 뉴스",
+    "📰 [속보]부산 세계유산위원회서 ‘한국의 갯벌’ 더 넓어졌다···여수·고흥·무안·서산 추가 - 경향신문",
+    "📰 신장식 조국혁신당 대표 “민주당과 적대적 합병은 거부” - 한겨레",
+    "📰 野 “사직상서로 李 맞선 정성호…공소취소 전에 물러나려 하나” - 동아일보"
   ],
-  "english_opic": "영어 표현 요약 실패: 모든 AI 모델 호출 실패: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
-  "japanese_sjpt": "일어 표현 요약 실패: 모든 AI 모델 호출 실패: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
-  "tech_papers": "논문 요약 실패: 모든 AI 모델 호출 실패: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+  "english_opic": "💡 오늘의 표현: I haven't gotten around to it yet.\n의미: 아직 거기까지 신경 쓸 겨를이 없었어요.\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)",
+  "japanese_sjpt": "💡 오늘의 표현: 差し支えなければ (사시츠카에 나케레바)\n의미: 지장이 없으시다면, 괜찮으시다면\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)",
+  "tech_papers": "🔬 최신 논문 리스트 (AI 요약 지연 중):\n\n제목: Experimental realization of a rotating radio-frequency ion trap for precision metrology\n제목: Flow of local sensitivity in a spin chain coupled to a bosonic bath\n제목: Rack-integrated quantum dot-based source of single and entangled photons at telecom C-band"
 }
