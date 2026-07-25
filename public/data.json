@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25 12:58:34",
+  "last_updated": "2026-07-25 13:05:27",
   "stocks": {
     "삼성전자": {
       "price": 249500.0,
@@ -24,36 +24,33 @@
       ]
     },
     "Micron": {
-      "price": NaN,
-      "change_pct": NaN,
+      "price": 990.21,
+      "change_pct": 3.2,
       "trend_5d": [
         865.46,
         970.82,
         959.48,
-        990.21,
-        NaN
+        990.21
       ]
     },
     "TSMC": {
-      "price": NaN,
-      "change_pct": NaN,
+      "price": 415.58,
+      "change_pct": -1.34,
       "trend_5d": [
         402.3,
         424.61,
         421.21,
-        415.58,
-        NaN
+        415.58
       ]
     },
     "NVIDIA": {
-      "price": NaN,
-      "change_pct": NaN,
+      "price": 208.76,
+      "change_pct": -1.56,
       "trend_5d": [
         203.28,
         207.29,
         212.06,
-        208.76,
-        NaN
+        208.76
       ]
     }
   },
@@ -63,9 +60,9 @@
     "EUR/KRW": 1658.3
   },
   "news": [
-    "뉴스 요약 실패: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
+    "뉴스 요약 실패: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
   ],
-  "english_opic": "영어 표현 요약 실패: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.",
-  "japanese_sjpt": "일어 표현 요약 실패: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.",
-  "tech_papers": "논문 요약 실패: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
+  "english_opic": "영어 표현 요약 실패: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+  "japanese_sjpt": "일어 표현 요약 실패: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+  "tech_papers": "논문 요약 실패: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
 }
