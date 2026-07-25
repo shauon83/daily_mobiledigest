@@ -1,0 +1,11 @@
+{
+  "last_updated": "2026-07-25 12:44:02",
+  "stocks": {},
+  "exchange_rates": {},
+  "news": [
+    "뉴스 요약 실패: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+  ],
+  "english_opic": "영어 표현을 불러오지 못했습니다.",
+  "japanese_sjpt": "일본어 표현을 불러오지 못했습니다.",
+  "tech_papers": "논문 요약 실패: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+}
