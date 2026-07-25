@@ -5,16 +5,23 @@ import yfinance as yf
 import urllib.request
 import xml.etree.ElementTree as ET
 import google.generativeai as genai
+import requests
 
-# 1. Gemini API 설정 (GitHub Secrets에서 환경변수로 주입됨)
+# 1. Gemini API 설정 (최신 무료 모델인 2.5-flash로 업데이트)
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
+
+# 2. 야후 파이낸스 접속 차단 우회를 위한 브라우저 위장 세션 설정
+session = requests.Session()
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+})
 
 def get_stocks():
-    # 미국/한국 주식 데이터 수집 (SpaceX, 키옥시아는 비상장사라 제외됨)
+    # 삼성전자, SK하이닉스, 마이크론, TSMC, 엔비디아
     tickers = {
         "삼성전자": "005930.KS", 
         "SK하이닉스": "000660.KS", 
@@ -25,7 +32,8 @@ def get_stocks():
     stock_data = {}
     for name, ticker in tickers.items():
         try:
-            t = yf.Ticker(ticker)
+            # session을 추가하여 봇이 아닌 척 데이터를 요청
+            t = yf.Ticker(ticker, session=session)
             hist = t.history(period="5d")
             if not hist.empty:
                 closes = hist['Close'].tolist()
@@ -47,7 +55,8 @@ def get_exchange_rates():
     rate_data = {}
     for name, ticker in tickers.items():
         try:
-            t = yf.Ticker(ticker)
+            # 여기에도 session 추가
+            t = yf.Ticker(ticker, session=session)
             hist = t.history(period="2d")
             if not hist.empty:
                 rate_data[name] = round(hist['Close'].tolist()[-1], 2)
@@ -74,19 +83,18 @@ def get_english_opic():
     try:
         res = model.generate_content(prompt)
         return res.text.strip()
-    except Exception:
-        return "영어 표현을 불러오지 못했습니다."
+    except Exception as e:
+        return f"영어 표현 요약 실패: {e}"
 
 def get_japanese_sjpt():
     prompt = "SJPT 레벨 7 이상을 위한 '오늘의 고급 일본어 표현' 1개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 작성해줘. 마크다운 없이 텍스트로만 작성해."
     try:
         res = model.generate_content(prompt)
         return res.text.strip()
-    except Exception:
-        return "일본어 표현을 불러오지 못했습니다."
+    except Exception as e:
+        return f"일어 표현 요약 실패: {e}"
 
 def get_tech_papers():
-    # ArXiv 오픈 API 활용
     url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending"
     try:
         response = urllib.request.urlopen(url)
@@ -119,7 +127,6 @@ def main():
         "tech_papers": get_tech_papers()
     }
     
-    # public 폴더 생성 (GitHub Pages에서 정적 호스팅될 폴더)
     os.makedirs("public", exist_ok=True)
     with open("public/data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
