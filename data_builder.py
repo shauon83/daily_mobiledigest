@@ -84,7 +84,10 @@ def get_news_summary():
         prompt = f"다음은 오늘의 주요 뉴스 헤드라인들입니다. 가장 중요한 핵심 이슈들을 분석하여 대표적인 요약문 20개를 작성해줘. 각 요약문은 줄바꿈으로 구분해줘.\n\n헤드라인:\n{chr(10).join(titles)}"
         ai_summary = ask_gemini_direct(prompt)
         
-        summaries = [line.strip() for line in ai_summary.strip().split('\n') if line.strip()] if ai_summary else [t for t in titles]
+        if not ai_summary:
+            return [{"text": "뉴스 요약 데이터 생성 실패", "link": "https://news.google.com"}]
+            
+        summaries = [line.strip() for line in ai_summary.strip().split('\n') if line.strip()]
         
         result = []
         for i, text in enumerate(summaries[:20]):
@@ -97,12 +100,12 @@ def get_news_summary():
 def get_english_opic():
     prompt = "OPIc AL 등급 달성을 위해 유용한 원어민 영어 표현 5개를 선정하고, 각각의 표현, 의미, 간단한 대화문 예시를 번호 매겨서 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
     res = ask_gemini_direct(prompt)
-    return res if res else "1. I haven't gotten around to it yet - 아직 거기까지 신경 쓸 겨를이 없었어요."
+    return res if res else "영어 표현 데이터를 불러오지 못했습니다."
 
 def get_japanese_sjpt():
-    prompt = "SJPT 레벨 7 이상을 위한 고급 일본어 표현 5개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 번호 매겨서 작성해줘. 마크다운 없이 텍스트로만 작성해."
+    prompt = "SJPT 레벨 5 이상을 위한 고급 일본어 표현 5개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 번호 매겨서 작성해줘. 마크다운 없이 텍스트로만 작성해."
     res = ask_gemini_direct(prompt)
-    return res if res else "1. 差し支えなければ (사시츠카에 나케레바) - 지장이 없으시다면"
+    return res if res else "일어 표현 데이터를 불러오지 못했습니다."
 
 def get_tech_papers():
     url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending"
@@ -123,10 +126,10 @@ def get_tech_papers():
         if not paper_list:
             return {"summary": "최근 논문 검색 결과가 없습니다.", "papers": []}
             
-        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문들입니다. 이를 바탕으로 전반적인 최신 기술 트렌드를 한국어로 4~5문장으로 요약해줘.\n\n{chr(10).join(papers_text[:10])}"
+        prompt = f"다음은 반도체 계측(Semiconductor metrology and inspection)관련 최신 논문들이야. 이 논문들을 최신 기술 트렌드에 맞춰 한국어로 4~5문장으로 요약해줘.\n\n{chr(10).join(papers_text[:10])}"
         ai_summary = ask_gemini_direct(prompt)
         
-        summary_text = ai_summary if ai_summary else "최신 반도체 계측 관련 논문 트렌드 분석입니다."
+        summary_text = ai_summary if ai_summary else "논문 트렌드 요약 데이터 생성 실패"
         
         return {
             "summary": summary_text,
