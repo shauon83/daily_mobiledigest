@@ -4,14 +4,10 @@ import datetime
 import yfinance as yf
 import urllib.request
 import xml.etree.ElementTree as ET
-import google.generativeai as genai
 import requests
 import math
 
 api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError("GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
-genai.configure(api_key=api_key)
 
 # 야후 파이낸스 우회 세션
 session = requests.Session()
@@ -19,22 +15,28 @@ session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 })
 
-# AI 응답 실패를 100% 방지하는 자동 폴백(Fallback) 함수
-def ask_gemini(prompt):
-    # 1순위: 최신 모델, 2순위: 구형 안정화 모델
-    models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro']
-    last_error = None
+# 라이브러리 우회: REST API 직접 호출 함수
+def ask_gemini_direct(prompt):
+    if not api_key:
+        return None
+        
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "contents": [{"parts":[{"text": prompt}]}]
+    }
     
-    for model_name in models_to_try:
-        try:
-            model = genai.GenerativeModel(model_name)
-            res = model.generate_content(prompt)
-            return res.text.strip()
-        except Exception as e:
-            last_error = e
-            continue # 실패하면 다음 모델로 재시도
-            
-    raise Exception(f"모든 AI 모델 호출 실패: {last_error}")
+    try:
+        response = requests.post(url, headers=headers, json=data, timeout=15)
+        if response.status_code == 200:
+            result = response.json()
+            return result['candidates'][0]['content']['parts'][0]['text'].strip()
+        else:
+            print(f"API 에러: {response.status_code} - {response.text}")
+            return None
+    except Exception as e:
+        print(f"AI 통신 실패: {e}")
+        return None
 
 def get_stocks():
     tickers = {
@@ -61,8 +63,7 @@ def get_stocks():
                         "change_pct": round(change_pct, 2),
                         "trend_5d": [round(x, 2) for x in closes]
                     }
-        except Exception as e:
-            print(f"{name} 주식 데이터 로드 실패: {e}")
+        except Exception:
             continue
     return stock_data
 
@@ -87,27 +88,34 @@ def get_news_summary():
         req = urllib.request.Request(url)
         response = urllib.request.urlopen(req)
         root = ET.fromstring(response.read())
-        titles = [item.find('title').text for item in root.findall('.//item')[:20]]
+        titles = [item.find('title').text for item in root.findall('.//item')[:10]]
         
         prompt = f"다음은 오늘의 주요 뉴스 헤드라인입니다. 가장 중요한 핵심 이슈 5가지를 뽑아서 1줄씩 요약해주세요.\n\n헤드라인:\n{chr(10).join(titles)}"
-        text = ask_gemini(prompt)
-        return [line.strip() for line in text.strip().split('\n') if line.strip()]
+        ai_summary = ask_gemini_direct(prompt)
+        
+        if ai_summary:
+            return [line.strip() for line in ai_summary.strip().split('\n') if line.strip()]
+        else:
+            # 안전장치: AI 실패 시 원본 헤드라인 5개 제공
+            return [f"📰 {t}" for t in titles[:5]]
     except Exception as e:
-        return [f"뉴스 요약 실패: {e}"]
+        return ["뉴스 데이터를 불러오지 못했습니다."]
 
 def get_english_opic():
     prompt = "OPIc AL 등급 달성을 위해 유용한 '오늘의 원어민 영어 표현' 1개를 선정하고, 그 의미와 2~3줄의 상황별 대화문 예시를 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
-    try:
-        return ask_gemini(prompt)
-    except Exception as e:
-        return f"영어 표현 요약 실패: {e}"
+    res = ask_gemini_direct(prompt)
+    if res:
+        return res
+    # 안전장치: 고정 표현 반환
+    return "💡 오늘의 표현: I haven't gotten around to it yet.\n의미: 아직 거기까지 신경 쓸 겨를이 없었어요.\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)"
 
 def get_japanese_sjpt():
     prompt = "SJPT 레벨 7 이상을 위한 '오늘의 고급 일본어 표현' 1개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 작성해줘. 마크다운 없이 텍스트로만 작성해."
-    try:
-        return ask_gemini(prompt)
-    except Exception as e:
-        return f"일어 표현 요약 실패: {e}"
+    res = ask_gemini_direct(prompt)
+    if res:
+        return res
+    # 안전장치: 고정 표현 반환
+    return "💡 오늘의 표현: 差し支えなければ (사시츠카에 나케레바)\n의미: 지장이 없으시다면, 괜찮으시다면\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)"
 
 def get_tech_papers():
     url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending"
@@ -119,15 +127,22 @@ def get_tech_papers():
         for entry in root.findall('arxiv:entry', ns):
             title = entry.find('arxiv:title', ns).text.strip()
             summary = entry.find('arxiv:summary', ns).text.strip()
-            papers.append(f"제목: {title}\n초록: {summary}")
+            papers.append(f"제목: {title}\n초록: {summary[:200]}...")
         
         if not papers:
             return "최근 논문 검색 결과가 없습니다."
             
         prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문 3편입니다. 이를 바탕으로 최신 기술 트렌드를 한국어로 3~4문장으로 요약해줘.\n\n{chr(10).join(papers)}"
-        return ask_gemini(prompt)
+        ai_summary = ask_gemini_direct(prompt)
+        
+        if ai_summary:
+            return ai_summary
+        else:
+            # 안전장치: 원본 논문 제목 제공
+            return "🔬 최신 논문 리스트 (AI 요약 지연 중):\n\n" + "\n".join([p.split('\n')[0] for p in papers])
+            
     except Exception as e:
-        return f"논문 요약 실패: {e}"
+        return "논문 데이터를 불러오지 못했습니다."
 
 def main():
     print("데이터 수집을 시작합니다...")
