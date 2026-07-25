@@ -13,7 +13,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans pb-20">
+<body class="bg-gray-100 text-gray-800 font-sans pb-24">
     <div class="max-w-md mx-auto bg-white min-h-screen shadow-lg relative">
         
         <!-- 상단 헤더 -->
@@ -41,11 +41,11 @@
 
             <!-- 3. 어학 탭 -->
             <div id="tab-lang" class="tab-content">
-                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🗣️ OPIc 영어 표현</h2>
-                <div id="english-container" class="bg-blue-50 p-4 rounded-lg mb-6 whitespace-pre-wrap text-sm"></div>
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🗣️ OPIc 영어 표현 (5선)</h2>
+                <div id="english-container" class="bg-blue-50 p-4 rounded-lg mb-6 whitespace-pre-wrap text-sm leading-relaxed"></div>
 
-                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🇯🇵 SJPT 일어 표현</h2>
-                <div id="japanese-container" class="bg-red-50 p-4 rounded-lg whitespace-pre-wrap text-sm"></div>
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🇯🇵 SJPT 일어 표현 (5선)</h2>
+                <div id="japanese-container" class="bg-red-50 p-4 rounded-lg whitespace-pre-wrap text-sm leading-relaxed"></div>
             </div>
 
             <!-- 4. 기술 논문 탭 -->
@@ -58,12 +58,17 @@
             </div>
         </main>
 
-        <!-- 하단 네비게이션 탭 -->
-        <nav class="fixed bottom-0 w-full max-w-md bg-white border-t flex justify-around text-xs text-gray-500 z-10 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
-            <button onclick="switchTab('finance')" class="tab-btn active relative py-3 w-1/4 text-center">금융</button>
-            <button onclick="switchTab('news')" class="tab-btn relative py-3 w-1/4 text-center">뉴스</button>
-            <button onclick="switchTab('lang')" class="tab-btn relative py-3 w-1/4 text-center">어학</button>
-            <button onclick="switchTab('tech')" class="tab-btn relative py-3 w-1/4 text-center">기술</button>
+        <!-- 하단 네비게이션 탭 & 서명 -->
+        <nav class="fixed bottom-0 w-full max-w-md bg-white border-t z-10 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+            <div class="flex justify-around text-xs text-gray-500 border-b border-gray-100">
+                <button onclick="switchTab('finance')" class="tab-btn active relative py-3 w-1/4 text-center">금융</button>
+                <button onclick="switchTab('news')" class="tab-btn relative py-3 w-1/4 text-center">뉴스</button>
+                <button onclick="switchTab('lang')" class="tab-btn relative py-3 w-1/4 text-center">어학</button>
+                <button onclick="switchTab('tech')" class="tab-btn relative py-3 w-1/4 text-center">기술</button>
+            </div>
+            <div class="px-3 py-1.5 text-right text-[10px] text-gray-400 bg-gray-50 tracking-wider">
+                Engineered by Sungeun
+            </div>
         </nav>
     </div>
 
