@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>나만의 하루 대시보드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s; }
+        .tab-btn.active { color: #2563eb; font-weight: bold; }
+        .tab-btn.active::after { content: ''; display: block; width: 100%; height: 3px; background-color: #2563eb; position: absolute; bottom: 0; left: 0; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans pb-20">
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-lg relative">
+        
+        <!-- 상단 헤더 -->
+        <header class="bg-blue-600 text-white p-4 sticky top-0 z-10 shadow-md">
+            <h1 class="text-xl font-bold text-center">🌟 오늘의 관심사</h1>
+            <p id="update-time" class="text-xs text-center mt-1 text-blue-200">데이터를 불러오는 중...</p>
+        </header>
+
+        <!-- 본문 내용 (탭 컨텐츠) -->
+        <main class="p-5">
+            <!-- 1. 주식/환율 탭 -->
+            <div id="tab-finance" class="tab-content active">
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">📈 주요 주식</h2>
+                <div id="stocks-container" class="space-y-3 mb-6"></div>
+                
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">💱 환율</h2>
+                <div id="rates-container" class="space-y-2"></div>
+            </div>
+
+            <!-- 2. 뉴스 탭 -->
+            <div id="tab-news" class="tab-content">
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">📰 오늘의 핵심 뉴스</h2>
+                <ul id="news-container" class="space-y-4 list-disc pl-5"></ul>
+            </div>
+
+            <!-- 3. 어학 탭 -->
+            <div id="tab-lang" class="tab-content">
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🗣️ OPIc 영어 표현</h2>
+                <div id="english-container" class="bg-blue-50 p-4 rounded-lg mb-6 whitespace-pre-wrap text-sm"></div>
+
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🇯🇵 SJPT 일어 표현</h2>
+                <div id="japanese-container" class="bg-red-50 p-4 rounded-lg whitespace-pre-wrap text-sm"></div>
+            </div>
+
+            <!-- 4. 기술 논문 탭 -->
+            <div id="tab-tech" class="tab-content">
+                <h2 class="text-lg font-bold mb-3 border-b pb-2 border-gray-200">🔬 반도체 계측 최신 논문</h2>
+                <div id="tech-container" class="bg-gray-50 p-4 rounded-lg whitespace-pre-wrap text-sm leading-relaxed border border-gray-200"></div>
+            </div>
+        </main>
+
+        <!-- 하단 네비게이션 탭 -->
+        <nav class="fixed bottom-0 w-full max-w-md bg-white border-t flex justify-around text-xs text-gray-500 z-10 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+            <button onclick="switchTab('finance')" class="tab-btn active relative py-3 w-1/4 text-center">금융</button>
+            <button onclick="switchTab('news')" class="tab-btn relative py-3 w-1/4 text-center">뉴스</button>
+            <button onclick="switchTab('lang')" class="tab-btn relative py-3 w-1/4 text-center">어학</button>
+            <button onclick="switchTab('tech')" class="tab-btn relative py-3 w-1/4 text-center">기술</button>
+        </nav>
+    </div>
+
+    <script>
+        // 탭 전환 기능
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // GitHub Actions가 만든 JSON 데이터 불러오기
+        fetch('public/data.json')
+            .then(response => response.json())
+            .then(data => {
+                // 업데이트 시간
+                document.getElementById('update-time').innerText = "최종 업데이트: " + data.last_updated;
+
+                // 주식 데이터 렌더링
+                let stocksHtml = '';
+                for (const [name, info] of Object.entries(data.stocks)) {
+                    const colorClass = info.change_pct >= 0 ? 'text-red-500' : 'text-blue-500';
+                    const sign = info.change_pct > 0 ? '+' : '';
+                    stocksHtml += `
+                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100">
+                            <span class="font-semibold w-24">${name}</span>
+                            <span class="font-bold">${info.price.toLocaleString()}</span>
+                            <span class="${colorClass} text-sm font-medium w-16 text-right">${sign}${info.change_pct}%</span>
+                        </div>
+                    `;
+                }
+                document.getElementById('stocks-container').innerHTML = stocksHtml || '<p>주식 데이터가 없습니다.</p>';
+
+                // 환율 데이터 렌더링
+                let ratesHtml = '';
+                for (const [name, price] of Object.entries(data.exchange_rates)) {
+                    ratesHtml += `
+                        <div class="flex justify-between items-center p-2 border-b border-gray-100 last:border-0">
+                            <span class="text-gray-600">${name}</span>
+                            <span class="font-medium">${price.toLocaleString()}</span>
+                        </div>
+                    `;
+                }
+                document.getElementById('rates-container').innerHTML = ratesHtml || '<p>환율 데이터가 없습니다.</p>';
+
+                // 뉴스 렌더링
+                const newsHtml = data.news.map(news => `<li class="text-sm leading-relaxed">${news}</li>`).join('');
+                document.getElementById('news-container').innerHTML = newsHtml;
+
+                // 어학 및 기술 렌더링
+                document.getElementById('english-container').innerText = data.english_opic;
+                document.getElementById('japanese-container').innerText = data.japanese_sjpt;
+                document.getElementById('tech-container').innerText = data.tech_papers;
+            })
+            .catch(error => {
+                console.error("데이터 로드 실패:", error);
+                document.getElementById('update-time').innerText = "데이터를 불러오는 데 실패했습니다.";
+            });
+    </script>
+</body>
+</html>
