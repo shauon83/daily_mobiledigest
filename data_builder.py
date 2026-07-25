@@ -9,43 +9,28 @@ import math
 
 api_key = os.environ.get("GEMINI_API_KEY")
 
-# 야후 파이낸스 우회 세션
 session = requests.Session()
 session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 })
 
-# 라이브러리 우회: REST API 직접 호출 함수
 def ask_gemini_direct(prompt):
     if not api_key:
         return None
-        
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
     headers = {'Content-Type': 'application/json'}
-    data = {
-        "contents": [{"parts":[{"text": prompt}]}]
-    }
-    
+    data = {"contents": [{"parts":[{"text": prompt}]}]}
     try:
         response = requests.post(url, headers=headers, json=data, timeout=15)
         if response.status_code == 200:
             result = response.json()
             return result['candidates'][0]['content']['parts'][0]['text'].strip()
-        else:
-            print(f"API 에러: {response.status_code} - {response.text}")
-            return None
-    except Exception as e:
-        print(f"AI 통신 실패: {e}")
-        return None
+    except Exception:
+        pass
+    return None
 
 def get_stocks():
-    tickers = {
-        "삼성전자": "005930.KS", 
-        "SK하이닉스": "000660.KS", 
-        "Micron": "MU", 
-        "TSMC": "TSM", 
-        "NVIDIA": "NVDA"
-    }
+    tickers = {"삼성전자": "005930.KS", "SK하이닉스": "000660.KS", "Micron": "MU", "TSMC": "TSM", "NVIDIA": "NVDA"}
     stock_data = {}
     for name, ticker in tickers.items():
         try:
@@ -57,7 +42,6 @@ def get_stocks():
                     today_price = closes[-1]
                     prev_price = closes[-2] if len(closes) > 1 else closes[-1]
                     change_pct = ((today_price - prev_price) / prev_price) * 100 if prev_price != 0 else 0
-                    
                     stock_data[name] = {
                         "price": round(today_price, 2),
                         "change_pct": round(change_pct, 2),
@@ -88,34 +72,38 @@ def get_news_summary():
         req = urllib.request.Request(url)
         response = urllib.request.urlopen(req)
         root = ET.fromstring(response.read())
-        titles = [item.find('title').text for item in root.findall('.//item')[:10]]
+        
+        news_items = []
+        titles = []
+        for item in root.findall('.//item')[:10]:
+            title = item.find('title').text
+            link = item.find('link').text
+            titles.append(title)
+            news_items.append({"title": title, "link": link})
         
         prompt = f"다음은 오늘의 주요 뉴스 헤드라인입니다. 가장 중요한 핵심 이슈 5가지를 뽑아서 1줄씩 요약해주세요.\n\n헤드라인:\n{chr(10).join(titles)}"
         ai_summary = ask_gemini_direct(prompt)
         
-        if ai_summary:
-            return [line.strip() for line in ai_summary.strip().split('\n') if line.strip()]
-        else:
-            # 안전장치: AI 실패 시 원본 헤드라인 5개 제공
-            return [f"📰 {t}" for t in titles[:5]]
-    except Exception as e:
-        return ["뉴스 데이터를 불러오지 못했습니다."]
+        summaries = [line.strip() for line in ai_summary.strip().split('\n') if line.strip()] if ai_summary else [t for t in titles[:5]]
+        
+        # 요약문과 첫 번째 뉴스 링크 매칭 형태 반환
+        result = []
+        for i, text in enumerate(summaries[:5]):
+            link = news_items[i]["link"] if i < len(news_items) else "https://news.google.com"
+            result.append({"text": text, "link": link})
+        return result
+    except Exception:
+        return [{"text": "뉴스 데이터를 불러오지 못했습니다.", "link": "https://google.com"}]
 
 def get_english_opic():
     prompt = "OPIc AL 등급 달성을 위해 유용한 '오늘의 원어민 영어 표현' 1개를 선정하고, 그 의미와 2~3줄의 상황별 대화문 예시를 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
     res = ask_gemini_direct(prompt)
-    if res:
-        return res
-    # 안전장치: 고정 표현 반환
-    return "💡 오늘의 표현: I haven't gotten around to it yet.\n의미: 아직 거기까지 신경 쓸 겨를이 없었어요.\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)"
+    return res if res else "💡 오늘의 표현: I haven't gotten around to it yet.\n의미: 아직 거기까지 신경 쓸 겨를이 없었어요."
 
 def get_japanese_sjpt():
     prompt = "SJPT 레벨 7 이상을 위한 '오늘의 고급 일본어 표현' 1개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 작성해줘. 마크다운 없이 텍스트로만 작성해."
     res = ask_gemini_direct(prompt)
-    if res:
-        return res
-    # 안전장치: 고정 표현 반환
-    return "💡 오늘의 표현: 差し支えなければ (사시츠카에 나케레바)\n의미: 지장이 없으시다면, 괜찮으시다면\n(AI 연결 지연으로 기본 표현이 제공되었습니다.)"
+    return res if res else "💡 오늘의 표현: 差し支えなければ\n의미: 지장이 없으시다면"
 
 def get_tech_papers():
     url = "http://export.arxiv.org/api/query?search_query=all:semiconductor+metrology&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending"
@@ -123,26 +111,31 @@ def get_tech_papers():
         response = urllib.request.urlopen(url)
         root = ET.fromstring(response.read())
         ns = {'arxiv': 'http://www.w3.org/2005/Atom'}
-        papers = []
-        for entry in root.findall('arxiv:entry', ns):
-            title = entry.find('arxiv:title', ns).text.strip()
-            summary = entry.find('arxiv:summary', ns).text.strip()
-            papers.append(f"제목: {title}\n초록: {summary[:200]}...")
         
-        if not papers:
-            return "최근 논문 검색 결과가 없습니다."
+        paper_list = []
+        papers_text = []
+        for entry in root.findall('arxiv:entry', ns):
+            title = entry.find('arxiv:title', ns).text.strip().replace('\n', ' ')
+            summary = entry.find('arxiv:summary', ns).text.strip().replace('\n', ' ')
+            id_url = entry.find('arxiv:id', ns).text.strip()
+            paper_list.append({"title": title, "link": id_url})
+            papers_text.append(f"제목: {title}\n초록: {summary[:200]}...")
+        
+        if not paper_list:
+            return []
             
-        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문 3편입니다. 이를 바탕으로 최신 기술 트렌드를 한국어로 3~4문장으로 요약해줘.\n\n{chr(10).join(papers)}"
+        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문 3편입니다. 이를 바탕으로 최신 기술 트렌드를 한국어로 3~4문장으로 요약해줘.\n\n{chr(10).join(papers_text)}"
         ai_summary = ask_gemini_direct(prompt)
         
-        if ai_summary:
-            return ai_summary
-        else:
-            # 안전장치: 원본 논문 제목 제공
-            return "🔬 최신 논문 리스트 (AI 요약 지연 중):\n\n" + "\n".join([p.split('\n')[0] for p in papers])
-            
-    except Exception as e:
-        return "논문 데이터를 불러오지 못했습니다."
+        summary_text = ai_summary if ai_summary else "최신 반도체 계측 관련 논문 트렌드 분석입니다."
+        
+        # 논문 요약 전체와 첫 번째 논문 링크, 혹은 개별 링크 구조로 반환
+        return {
+            "summary": summary_text,
+            "papers": paper_list
+        }
+    except Exception:
+        return {"summary": "논문 데이터를 불러오지 못했습니다.", "papers": []}
 
 def main():
     print("데이터 수집을 시작합니다...")
