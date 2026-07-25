@@ -103,7 +103,7 @@ def get_english_opic():
     return res if res else "영어 표현 데이터를 불러오지 못했습니다."
 
 def get_japanese_sjpt():
-    prompt = "SJPT 레벨 5 이상을 위한 고급 일본어 표현 5개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 번호 매겨서 작성해줘. 마크다운 없이 텍스트로만 작성해."
+    prompt = "SJPT 레벨 7 이상을 위한 고급 일본어 표현 5개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 번호 매겨서 작성해줘. 마크다운 없이 텍스트로만 작성해."
     res = ask_gemini_direct(prompt)
     return res if res else "일어 표현 데이터를 불러오지 못했습니다."
 
@@ -126,7 +126,7 @@ def get_tech_papers():
         if not paper_list:
             return {"summary": "최근 논문 검색 결과가 없습니다.", "papers": []}
             
-        prompt = f"다음은 반도체 계측(Semiconductor metrology and inspection)관련 최신 논문들이야. 이 논문들을 최신 기술 트렌드에 맞춰 한국어로 4~5문장으로 요약해줘.\n\n{chr(10).join(papers_text[:10])}"
+        prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문들입니다. 이를 바탕으로 전반적인 최신 기술 트렌드를 한국어로 4~5문장으로 요약해줘.\n\n{chr(10).join(papers_text[:10])}"
         ai_summary = ask_gemini_direct(prompt)
         
         summary_text = ai_summary if ai_summary else "논문 트렌드 요약 데이터 생성 실패"
