@@ -83,13 +83,16 @@
                 // 주식 데이터 렌더링
                 let stocksHtml = '';
                 for (const [name, info] of Object.entries(data.stocks)) {
-                    const colorClass = info.change_pct >= 0 ? 'text-red-500' : 'text-blue-500';
-                    const sign = info.change_pct > 0 ? '+' : '';
+                    // 데이터가 없거나 NaN일 경우 대비
+                    const price = info.price || 0;
+                    const pct = info.change_pct || 0;
+                    const colorClass = pct >= 0 ? 'text-red-500' : 'text-blue-500';
+                    const sign = pct > 0 ? '+' : '';
                     stocksHtml += `
                         <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100">
                             <span class="font-semibold w-24">${name}</span>
-                            <span class="font-bold">${info.price.toLocaleString()}</span>
-                            <span class="${colorClass} text-sm font-medium w-16 text-right">${sign}${info.change_pct}%</span>
+                            <span class="font-bold">${price.toLocaleString()}</span>
+                            <span class="${colorClass} text-sm font-medium w-16 text-right">${sign}${pct}%</span>
                         </div>
                     `;
                 }
