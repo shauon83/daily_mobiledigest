@@ -6,22 +6,21 @@ import urllib.request
 import xml.etree.ElementTree as ET
 import google.generativeai as genai
 import requests
+import math # NaN 체크를 위해 추가
 
-# 1. Gemini API 설정 (최신 무료 모델인 2.5-flash로 업데이트)
+# 1. Gemini API 설정 (안정적인 gemini-1.5-pro 모델 사용)
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-2.5-flash')
+model = genai.GenerativeModel('gemini-1.5-pro')
 
-# 2. 야후 파이낸스 접속 차단 우회를 위한 브라우저 위장 세션 설정
 session = requests.Session()
 session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 })
 
 def get_stocks():
-    # 삼성전자, SK하이닉스, 마이크론, TSMC, 엔비디아
     tickers = {
         "삼성전자": "005930.KS", 
         "SK하이닉스": "000660.KS", 
@@ -32,19 +31,26 @@ def get_stocks():
     stock_data = {}
     for name, ticker in tickers.items():
         try:
-            # session을 추가하여 봇이 아닌 척 데이터를 요청
             t = yf.Ticker(ticker, session=session)
             hist = t.history(period="5d")
             if not hist.empty:
-                closes = hist['Close'].tolist()
-                today_price = closes[-1]
-                prev_price = closes[-2] if len(closes) > 1 else closes[-1]
-                change_pct = ((today_price - prev_price) / prev_price) * 100
-                stock_data[name] = {
-                    "price": round(today_price, 2),
-                    "change_pct": round(change_pct, 2),
-                    "trend_5d": [round(x, 2) for x in closes]
-                }
+                # NaN 값을 걸러내고 유효한 숫자만 남김
+                closes = [c for c in hist['Close'].tolist() if not math.isnan(c)]
+                if len(closes) >= 2:
+                    today_price = closes[-1]
+                    prev_price = closes[-2]
+                    change_pct = ((today_price - prev_price) / prev_price) * 100
+                    stock_data[name] = {
+                        "price": round(today_price, 2),
+                        "change_pct": round(change_pct, 2),
+                        "trend_5d": [round(x, 2) for x in closes]
+                    }
+                elif len(closes) == 1:
+                    stock_data[name] = {
+                        "price": round(closes[0], 2),
+                        "change_pct": 0.0,
+                        "trend_5d": [round(closes[0], 2)]
+                    }
         except Exception as e:
             print(f"{name} 주식 데이터 로드 실패: {e}")
             continue
@@ -55,11 +61,12 @@ def get_exchange_rates():
     rate_data = {}
     for name, ticker in tickers.items():
         try:
-            # 여기에도 session 추가
             t = yf.Ticker(ticker, session=session)
             hist = t.history(period="2d")
             if not hist.empty:
-                rate_data[name] = round(hist['Close'].tolist()[-1], 2)
+                closes = [c for c in hist['Close'].tolist() if not math.isnan(c)]
+                if closes:
+                    rate_data[name] = round(closes[-1], 2)
         except Exception:
             continue
     return rate_data
@@ -129,7 +136,8 @@ def main():
     
     os.makedirs("public", exist_ok=True)
     with open("public/data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        # NaN 값이 JSON에 들어가는 것을 원천 차단
+        json.dump(data, f, ensure_ascii=False, indent=2, allow_nan=False)
         
     print("데이터 저장 완료: public/data.json")
 
