@@ -8,32 +8,33 @@ import google.generativeai as genai
 import requests
 import math
 
-# 1. Gemini API 설정 및 모델 자동 탐색 (404 에러 원천 차단)
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
 genai.configure(api_key=api_key)
 
-selected_model = 'gemini-pro' # 안전한 기본값
-try:
-    for m in genai.list_models():
-        if 'generateContent' in m.supported_generation_methods:
-            model_name = m.name.replace('models/', '')
-            selected_model = model_name
-            # 가볍고 빠른 flash 계열 모델이 사용 가능하다면 최우선 선택
-            if 'flash' in model_name:
-                break
-except Exception as e:
-    print(f"모델 탐색 중 오류 발생 (기본값 사용): {e}")
-
-model = genai.GenerativeModel(selected_model)
-print(f"선택된 AI 모델: {selected_model}")
-
-# 2. 야후 파이낸스 우회 세션
+# 야후 파이낸스 우회 세션
 session = requests.Session()
 session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 })
+
+# AI 응답 실패를 100% 방지하는 자동 폴백(Fallback) 함수
+def ask_gemini(prompt):
+    # 1순위: 최신 모델, 2순위: 구형 안정화 모델
+    models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro']
+    last_error = None
+    
+    for model_name in models_to_try:
+        try:
+            model = genai.GenerativeModel(model_name)
+            res = model.generate_content(prompt)
+            return res.text.strip()
+        except Exception as e:
+            last_error = e
+            continue # 실패하면 다음 모델로 재시도
+            
+    raise Exception(f"모든 AI 모델 호출 실패: {last_error}")
 
 def get_stocks():
     tickers = {
@@ -89,24 +90,22 @@ def get_news_summary():
         titles = [item.find('title').text for item in root.findall('.//item')[:20]]
         
         prompt = f"다음은 오늘의 주요 뉴스 헤드라인입니다. 가장 중요한 핵심 이슈 5가지를 뽑아서 1줄씩 요약해주세요.\n\n헤드라인:\n{chr(10).join(titles)}"
-        res = model.generate_content(prompt)
-        return [line.strip() for line in res.text.strip().split('\n') if line.strip()]
+        text = ask_gemini(prompt)
+        return [line.strip() for line in text.strip().split('\n') if line.strip()]
     except Exception as e:
         return [f"뉴스 요약 실패: {e}"]
 
 def get_english_opic():
     prompt = "OPIc AL 등급 달성을 위해 유용한 '오늘의 원어민 영어 표현' 1개를 선정하고, 그 의미와 2~3줄의 상황별 대화문 예시를 작성해줘. 마크다운 기호 없이 텍스트로만 깔끔하게 작성해."
     try:
-        res = model.generate_content(prompt)
-        return res.text.strip()
+        return ask_gemini(prompt)
     except Exception as e:
         return f"영어 표현 요약 실패: {e}"
 
 def get_japanese_sjpt():
     prompt = "SJPT 레벨 7 이상을 위한 '오늘의 고급 일본어 표현' 1개를 선정하고, 한글 발음 표기와 함께 의미, 예문을 작성해줘. 마크다운 없이 텍스트로만 작성해."
     try:
-        res = model.generate_content(prompt)
-        return res.text.strip()
+        return ask_gemini(prompt)
     except Exception as e:
         return f"일어 표현 요약 실패: {e}"
 
@@ -126,8 +125,7 @@ def get_tech_papers():
             return "최근 논문 검색 결과가 없습니다."
             
         prompt = f"다음은 반도체 계측(Semiconductor metrology) 관련 최신 논문 3편입니다. 이를 바탕으로 최신 기술 트렌드를 한국어로 3~4문장으로 요약해줘.\n\n{chr(10).join(papers)}"
-        res = model.generate_content(prompt)
-        return res.text.strip()
+        return ask_gemini(prompt)
     except Exception as e:
         return f"논문 요약 실패: {e}"
 
