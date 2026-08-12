@@ -1,234 +1,151 @@
 {
-  "last_updated": "2026-08-11 08:53:26",
+  "last_updated": "2026-08-12 09:07:19",
   "stocks": {
     "삼성전자": {
-      "price": 230000.0,
-      "change_pct": -0.43,
+      "price": 239500.0,
+      "change_pct": 4.13,
       "trend_5d": [
-        240000.0,
-        246000.0,
         230500.0,
         231000.0,
-        230000.0
+        230000.0,
+        239500.0
       ]
     },
     "SK하이닉스": {
-      "price": 1420000.0,
-      "change_pct": -0.14,
+      "price": 1425000.0,
+      "change_pct": 0.35,
       "trend_5d": [
-        1577000.0,
-        1668000.0,
         1495000.0,
         1422000.0,
-        1420000.0
+        1420000.0,
+        1425000.0
       ]
     },
     "Micron": {
-      "price": 861.0,
-      "change_pct": -1.89,
+      "price": 868.52,
+      "change_pct": 0.87,
       "trend_5d": [
-        892.67,
         893.19,
         881.47,
         877.57,
-        861.0
+        861.0,
+        868.52
       ]
     },
     "TSMC": {
-      "price": 418.47,
-      "change_pct": -0.37,
+      "price": 422.06,
+      "change_pct": 0.86,
       "trend_5d": [
-        417.17,
         414.0,
         418.2,
         420.04,
-        418.47
+        418.47,
+        422.06
       ]
     },
     "NVIDIA": {
-      "price": 217.55,
-      "change_pct": -2.86,
+      "price": 217.5,
+      "change_pct": -0.02,
       "trend_5d": [
-        211.94,
         219.22,
         218.99,
         223.96,
-        217.55
+        217.55,
+        217.5
       ]
     }
   },
   "exchange_rates": {
-    "USD/KRW": 1418.15,
-    "JPY/KRW": 8.89,
-    "EUR/KRW": 1636.5
+    "USD/KRW": 1413.48,
+    "JPY/KRW": 8.85,
+    "EUR/KRW": 1630.0
   },
   "news": [
     {
-      "text": "[AI 응답 실패] 콜롬비아 덮친 21세기 최대 강진…111명 사망, 건물 61채 완파 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xTEpqRExlS2lUM2RHQTZUWHoyMlNwaERMbUJBZUp2VjNHQmJ5SzJiNUU2YmtaTlVoS1ZqcW5mSmFLNVNJb0FYMUxKTDNCMy1QYlB2X2pzRDdGbmVYYWZmUGlfR0FENEVySW04alU4aw?oc=5"
+      "text": "[AI 응답 실패] 청와대 “북 탄도미사일 발사, 유엔 안보리 결의 위반…즉각 중단 촉구” - news.kbs.co.kr",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA2cHNkeXFjdUZhbTA3Q3R5UE9KeFVQN2JzR0pKMWRpenNLdU1ianZIcWIyTU9CQmJ6QmZyY1dqV2FEUDFUSDNQcENmZlpoTG05a1p1aWU5ZkZIVmc?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 李 “日구마모토처럼 신속 집행” 광주팹 속도전 넘어 전격전 주문 - 동아일보",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1zNm1KZkwzalNndzdFZmpiMkMxVTU4Z3dpcmhNQzQ2UGxvOEhTaktYYjlwTmV6NmpIcEg1M1JidjhzdDFocjRXQjExYW5zcGI4MXFuZElhSGpUQWVSZnYyUkVhSVpZQkRjclJuSkpKQTEtU2pXSDlR0gFmQVVfeXFMT2NYMXR1c0dEa0FRcm5hei1Nel9UZkV4N3huWkNCSElNSGdCNEF3ZzRPcDFKWGNlN2FzdGlLQ3BxZDY4bVZabVllMWV4Ui1SUFRlUi1NMHFXbUpPVDlwVWlGWHJBcjB3?oc=5"
+      "text": "[AI 응답 실패] 콜롬비아 강진 사망자 200명대로 증가···밤샘 구조 이어가 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5sZDBKdF9lLWhVUDJuNmlZc1d3bXdhOVZXQ05YVTNFOWJiY0tTNFdfYlA1aktvYzJXNURxYlBMLURGUWFCTWJudWpXQjcxd2FVdDdnZDdKM0MxZ9IBX0FVX3lxTE9lT1JXeW1aZXBVRDAwNElIVjhDR2xyYkRRVmJWRHNXRzIxNW1DRXBaTVdWX01oOTZVLXdoa1NfMDVJRzRNRGFleEhpQlFoVDVadHp6QVMwaDZ5ZzE3Tzh3?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 유리창 뜯기고 컨테이너 넘어가고‥상하이 쑥대밭, 다음은 베이징 - v.daum.net",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qUTV3VF9Db1BWd0FnQlhlQnpoTkVGdDJkM05wTWhHY0UyNnNiazhOeWE0czBnVGhOa2JLR09WNXhvNFVubTBrQkdZdVVyMlE?oc=5"
+      "text": "[AI 응답 실패] 김민석 “조작 기소, 취소가 원칙…지난 1년간 방식으론 정부 성공 못해” [인터뷰] - 한겨레",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5JMmlIYzQ3SDcxelFodE1OLTdDSFh0ZkU3b2dGLXd6U3BXQ2dPWUlwekU3TXVpTUw2OE41eklCUm4yOTVQT1R2NDg2RnhaLWJyTEg5bjlwU2R6eElPeUdPcnBvY2ZhNUlOVXVHT3R0YTMwSTlr?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 트럼프 대통령, 이란에 ‘배상’ 요구 - VOA 한국어 홈페이지",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNc1hJVWM3NUR6Yk5Rb1dXeWQ1aG4zMEFmRDdHdjNRTmQ3YndYQWlLbDlKM3luTk1vU1J0VjJuODRJSmM3T1B0aF9DUGVVcFZQdlItaWdfa3RWNnkwM2llYTFVUVdmTmlQWnBkN3Y3REFvZEpYM09jb3B6RUtkS1NsOElkOVhWaUVKUzZsT2VCNkhSX2ZVM2NETlRlRdIBngFBVV95cUxQM29RNkpSZEdjeGNMSTZlRmZiTm1BZ1BYd1ptX0I1X29zYmdTYVNrSHlEelQ2bm1Zc3Vtd2Y3Z2RLRkhwTnlsMXBTNnF5dXdCU2xNdlpHTlV5SjVkZmp3MUlad3RFRWNKN191VTU3LTVtR1hPTHJrMTRxUDZYdkpNVklRcnA1VGlQRDkzUDRIcHhZSXd5LXdobEZ1VWJ6dw?oc=5"
+      "text": "[AI 응답 실패] 2028 총선·2030 대선… ‘정치 시계’에 맞물린 호남반도체 - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQdVljUlVxdTBKWTZjdlZ4bVg0dE4tT2JpYWhCMDlyT1BFT0FramFxSjBaSWtFV0dodE9SSTJOX2pXYklpRl8xMThDREdMa0lCalJCZXI5X2dmNHVEWnZUMVhtNXJZS3pGU25tc3F1Sm5oVzg3MEJvdzZqVnBZcUU1WU00QmMzbTQ1YmVJMU8zRnc?oc=5"
     },
     {
-      "text": "[AI 응답 실패] \"집 비운 지 5년 넘었는데 첫삽도 못떴다\"…서울 재건축 '비명' - 한국경제",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13NG1LV2xaTTVqWENJbmVyc0JvODlPMEZ6dEUzbFQ2WXV4eEFyZFVlOTVyWTlPR3ljbnRCRXVEN0xGR1RYSlZXOURfM2RxWC1yRUU5OHZXMlA5QQ?oc=5"
+      "text": "[AI 응답 실패] 살수차로 물 쏟아부어도 ‘역부족’… 가뭄에 갇힌 경남, 단감·벼 말라 죽는다 - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5HWm5fQ3R5dkZkVnN5MmU5dzA2VS05QjVLSzNJNWg2QmtqdGxTaTVVYXJ2OWx6VG15WHNYeEZPVFdWY3VJRDBDaExkMFQzMk8zeUp1U0JXNTZCcFBsWDM2TXdYV2IwMWQ4Rl9NODRWQ3dmYlJEbGpJaFNR?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 정부·여당에서 이탈 ‘2030 여성’…86 중심 정당 체제 혁신 필요 목소리 - 경향신문",
+      "text": "[AI 응답 실패] \"대통령 모르는 세제개편안, 나올 수 없어\" 전 세제실장들 '쓴소리' - 한국일보",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE10ZFo2LUw5V09JZ3JmZFpoWkFUMWJsNXpZbnZHOF9KSFNCNlJhaTlRY05ab1ZPM0daYzBtazFHa1RUeHphcjRRLVJzZ2Z0NW45WjJIWVZjS1BGdGY1RGd2M3UzZ1lrZTdHcXNJUmdn0gFzQVVfeXFMT1NOcWFjbnlGQi1XV2ZxUF9ZN0pLXzdEWm1Eal9hVnRhNHQxUXMxWkczX3A1Y1NxRDFPLWFETTNrZXhtNFBENENsVjJHNDNnNDRuZnZBcVRwSFNtWE9yQWlkMk1lMWlXTWM5MU50cllIZnBQcw?oc=5"
+    },
+    {
+      "text": "[AI 응답 실패] 野 \"정책이 시장 이기겠나\"... 김윤덕 국토부장관 \"네\" - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWVJ1aDZHUWpiVEJVQVhyblY4OWx2di16QjlWTFYzcjNKZEVVNWlnQ1M2TEZkMENjTnRSX1c0Mnlqc1BnZXRxMURxeXJoZTJHbXpDY21IUjlKV0ltNFdLajZZVENOeW5TYVJiaTEtcUUxc2ZRbnlvQ181ckVITkp4a05ianJlUQ?oc=5"
+    },
+    {
+      "text": "[AI 응답 실패] 부동산 민심 폭발에… 비거주 1주택자 거주 인정 요건 확대 검토 - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMkJxZFJDdy1MUHNyLXN4RFNqOFhPb0tMV1B0a3RDMzV0Q2NFMjU3RnhnYnZIN1hnSTU3WktkYVhjSW43d0NFeXI4MDI3Q2NmcjR4dTFFZzVTMEVkbkVHdjlFWFM4aGNQekRmSEhlaGNuV3N1bHVJZl82NURIZlFtakJxYVNkeElDSC0ybHZB?oc=5"
+    },
+    {
+      "text": "[AI 응답 실패] [점선면]‘래미안 버스티지’? 밈이 된 청년 주거 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45UF9yLUNjdjdiem00a29pVEd6WlIwMXl3SzJEOWtDa0p3Ry1yQWZaS2ZLUnI1bWFBQnl1aUtrMmtSNFVOV1dOTVZkUzBFeXlRajg2ei16dUZvQdIBX0FVX3lxTE8tSl9WMDhNMUx5ZW9sdFhLX192WEhHVWt2b3pSSy00bEVpZFdmdmktbXlrZXlzaWFTU2JXVVR3b1pmcHRhdmtyM0N0TFFGUkZBeDk0eWNVeXpmb1JWMWJV?oc=5"
+    },
+    {
+      "text": "[AI 응답 실패] 이재명 정부·민주당에 등 돌리는 ‘2030 여성’···“86세대 중심 현 체제서 벗어나야” - 경향신문",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE95V19EX0FaSmlhSk5CbldWOE5ZSW5DcU1oYzIwa3h0bGN6ZnJGOTJKWWNpemhXeVlmNzV5Qm1xLXdLU2JFalFvWm80a0RIbFgyNjVqdmxmeTh0Z9IBX0FVX3lxTE9ZOVowQWU0aTZpWldJZHUxZ3lpbDNYVF9MQmJKYmJDSVFJSDNmQmJjTjA3cWR3QVRTQkJkYzFDVUcySGpjbDRKMVhTcFVKRHhiWjdOTzJtN2kxeDg5NHlJ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] [연합뉴스 이 시각 헤드라인] - 10:30 - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5wZXUtSW1hWXRtQU9nU1c5eC1TVFFyM201d19ISDg1SXd6d0N4SjdkYjQzdTJad1hSTzBGWnRTNXRERTBoSXJpVXZXRUNYSDdFbndoX0ZKS3hPQmfSAWBBVV95cUxOY2tQbEhzN19aZHlpbXRLbktBN1NHbkZCVFVIQ3RXWGRxR2RCN3JNSFZsX3hUSGlXX3RrVm1vTWw3bWJiUWpoXzg0NzllSmgxVFBnYVIySUNuXzZLbzBzQkM?oc=5"
+      "text": "[AI 응답 실패] 라인강 극한 가뭄에 두손 든 독일 기업…일부 제품 불가항력 선언 - 연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9yZlM2Z0Y5NGdhc0l3cERUU0lua2tIanVTYzBMYkNFajM0VDZLNXRocmpqVndsQ2lCS3VXaERYSU15bGJYNm1vNk1FeUdPcmxmT24zRzdiNjVEVDDSAWBBVV95cUxPTTZUZVhVTkhJN0ZseHVobDJRbml1TGZDVEhxMlJXVmNkMzFDdlptc2xQd3EtWkVXVUltMnIxY3AtQ1dVRFJDZ2lRemNXR3J5OFk0N19Ga3VoSkpsSHdfYXQ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 김민석 \"야당의 개소리도 참았는데, 정청래 '선거 승리' 발언은 너무 화나\" - MBC 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9janJTdV9hOThKTHJDSVVKbS1uZURoZUtFeHlEdzg1Zm9MbjNBVkc0eGFtQjl3Y0dLZUhjeWoyOU9PTjBSLVFxakt3Sk1sOWJzQzRjVnYxTTRqbHJzR0EzMWZNcmpmSHVYYlhPbEkyNnZjX2o4ODc3ONIBeEFVX3lxTE5sVjhGd01pNXowZEVNYTBLa3FkUG1oLU43MEtNQXM3SDVNY1lfS3Bpd0p5R1RUT2Z1Q0FfQjhSeFhTMHEwUlU2Y2FDLVVYZElTMS1GOFEtVjJlZUg4TENxbVlsOVhLdHgtcUhSSEoySmRyc1ZvSlhwcw?oc=5"
+      "text": "[AI 응답 실패] 중재국 파키스탄 \"미국·이란 '일종의 합의'에 근접했다\" - 한국경제",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5OUU50alZqOEJBdWpyUkhxcWRZQlpLd1k5WG5uVjBub0pQdlRTTld4YUczUHJYeTdKaHhkbUUtVEZYSGdsaU1fLU1SbjVpeFR0UGNsNDVRLVp2UQ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] [사설] 연어 술 파티 안 먹히자 별건 감찰, 치졸한 박상용 검사 사냥 - 조선일보",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMkNYdnFwMFhRVjlhejRhYmFWa05oWDhpeElBcnV3UlV0eHZIdmtqdW1Zb1hOLXFjeFJfOWRfVHdIdTEyVUpGRzRxb1NQREl1V0RpbUIyX1B5eXBwdU1va0doNmZWSUtxd202RXRZeF9nT01abG9zemxuSFlyY2stQWdWVmZHZw?oc=5"
+      "text": "[AI 응답 실패] 뉴욕증시, 미·이란 협상 의구심에 약보합 마감…다우 0.1%↓ - 연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ZVlUtNmNKSlJhSmM0cThEM0VHRktmcGN5M0E1bjZiWlk1MjA5dW5SYVF0NkM5OENpU3lSUlNCbzFMdWRfX2R4NDJ3N3lfV3RCNG5kSW9fRE5wWFHSAWBBVV95cUxPV1NqVDRScFVIOEdVOHRTemEwNm1fRDhtdkVGLVNnTml5WlJVM1NTcmQ3M3RPWlZhUG1NM1lWbkljaUp1Q2JNbmFFMzBOcTV0d0YxTGJRWDZqcHE2ZnZjb3E?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 김건희 “검사님, 다른 영부인 수사 다 해봤느냐” 격앙 - 동아일보",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1jSENhdlp6aHc1MmZUb0hIYnZjaFI3ZTZmOXBTV0c0UW9XTkdKZC1IUnUzYm1hNmxZN3c3SG40MUtqRlpaS3dfOVNnWmdYMEtBM0R4TllEeDRSSkhWVlJvaVNsR1kxd3ZKQWMzSUZkSzJsUmFHRVHSAWZBVV95cUxPbzc0QUVEczBJamZOR1hmcVFWQUxNUUNTOHN0SXRqSzh5NnpQcHhvdW13bVJILS1hWDlYa1FqcG1lUjhCR3RtSHk5TEpFN3ZrcFBTc093OUtyZVlUYTFUVG9Kd1J1aFE?oc=5"
+      "text": "[AI 응답 실패] 후티 반군 매체 \"홍해서 사우디 군수물자 수송선 공격\" - MBC 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1hUEJ2V1pSWUpsS09TMGFsWGtyMEc2N3RlVjFUZHQ0VjNFdXpVSlExMjhZLUJWTzlnMG5qTGZPNWFpVlJJTkFQbGZpR29EdmlUV1B1RjJIaWRwVFdWM0syUW9FR0gwMG9obHc4Q29zSC1xRHlR0gF0QVVfeXFMTVd2MkpvRURJLXUwVGFFN05lTEJuLVl3cnUxMlU5NC1qUTljN080NzlNOWxjVkd2SHl5T2o1N24yX1hoQ3Fqa2xrdEtma1VqZ0ZKZ19hTHpDVi1YRllxNFdwaGx3XzJ6ZWZkVGM0Y05SYmUyZXI?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 젤렌스키 \"러, 북한군 추가 배치 준비…탄도미사일 또 받아\"(종합) - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE11VzEtUzRzcy1JRTJLalpEVVdQYzlSSzVfODQ5SFQycWptakpPV0lRdDdWcnFyNy1JdGx6bnNBSkJyeTVIV0dQLWstOGRPaTM2N283NUYyYktNN0XSAWBBVV95cUxNb1JyZjFiM2RadWlZWnRRTXhtclgzUHkyWVoyYjB0azZ3Q05GUE0wYjRxSDBoR3R0d3dQZF9zM28wMUxKbzNVNmNqQlZEVi1FQXZSQ3k2bnpWMUM4UGZTaHc?oc=5"
+      "text": "[AI 응답 실패] “이거 좀 쎄한데”…개미들 반도체 베팅할때, 블랙록은 K바이오 줍줍 - 매일경제",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YcUV1Ty1ZbGtTQXg2VzhiLXJqTUN6Nk5yZnhJRG5HcXg1ZUhIRTJZS21wMkh0cDRkMER2dEJyMjNmejludW9uOXlMeWtUVkdMb1E?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 뉴욕증시, 유가 5% 급등·기술주 약세에 약보합…나스닥 0.32%↓[뉴욕마감] - MTN 머니투데이방송",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9BS1hiMFNDSl9hMW0tTXRxUHA4My0yUFExMjR6cFdvZGJjOGxpQVNlNDFCSF9ockZlekVJNUUyMzdnRUZlUkhhY2VHdFh3M0IwU3ljYkpQN01CeHhSQ0JSVFc1RTU?oc=5"
+      "text": "[AI 응답 실패] [단독] 美 TPG, 롯데렌탈 1.3조원에 인수한다 - 한국경제",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE82OVB6TzJJdmNUN20xemZyUFdRNGR6QTlHYUdUUW5QRWVHRU1ZZk1GV1RuVHh3Z0VkOFE3dmJYUXZrS3FCcW84TzhVY1BZa2I2OWpTQ0JoNHJodw?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 北, 日방위백서 비난…\"전쟁기계 가동의 합법화 노린 재침백서\" - 연합뉴스 한민족센터",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1pbXVpcEU5MVppMy1FY3luR0RsSktGUjFiLTVsT3E5T1UyUHpUajdzUXdXek1KdTZqa1F1cDJsSlFwa0Y0WTdncWQ5RFd1ZklkdTg5UF9MU21CcTRjdXRnUWctUEJYN3YyQTNuWXJGNWpEckta?oc=5"
+      "text": "[AI 응답 실패] \"이게 상한가를 치네\"...영업익 164% 급증, 'AI 잭팟' 터트린 '이 종목' [주주클럽] - v.daum.net",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE56NXFDYVFiTTFjWWxpTjczZWh5dnBUZ0hFSkR0U2JnXzJzSUxwUTh5TERhSTJvWjR6ZTdRNFRoSU94R1dtV19SWUFLU2szaWs?oc=5"
     },
     {
-      "text": "[AI 응답 실패] WHO \"민주콩고 에볼라 발병, 공식 선언 3개월 전 시작\" - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9jSFVBbXlrdW10LW82U2wteFd4S3V2Q0JjUjR0ZEJjVDczb2xMck9BNDN3RTZYX21ZdkwzcUpUSlcyaGtOSjdfOVFCeEtEZld1S0NVZjBtSDF2dFHSAWBBVV95cUxPdzVCMHowUGJxbGNBSmxBNEpLOG9ENGczQ2poU00teWljTUNwTU1ydW1rSWFnVTJDaE1zcXZtcC1pU1JRcC1rRWhLZDFnTkJTYkNkUkdBblNPSUtxMU5iN1A?oc=5"
+      "text": "[AI 응답 실패] ‘리니지 클래식’ 통했다…엔씨 2분기 영업익 10배 껑충 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5aXpVdndWZWVBeHlLbklwM3JXMVdibzFPbzg4T0QxcjZQVDdscHJzcGlRTm5PcVRTRVB3WDJ5UFNncnQ4M1lrOHo1dk9kOFdsYW1jekNNcjFUd9IBX0FVX3lxTFBWQ0ktN2J6QmI2Y1pZS1R3NnBtc1Vsang3WkUyN01DVERfa0dlTHFaZWVGUnZtZ0hwVlpmTjU2aXE1a3E4dU8yNEpjck1FcndDOHZGdm5mV05vLWRDNnBF?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 엔비디아, 애플, 인텔 - 마켓인",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8xX3dsa0tFcFp4Snh2VGFDcDdHQXpoQmpvNE1ldHdpMENLY2xxOEJhemtxQWN3YjZBY01OODlseVNGMHE1bldsdHIxeHJGMWFIVWw3ZFZubDMzWkZYV3VQVTczb21xMGJodUdrcDgweEp6Nm8?oc=5"
+      "text": "[AI 응답 실패] ‘우주 쓰레기’ 달 표면에 충돌하던 날 [오철우의 과학풍경] - 한겨레",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBHaEpJbHE2M3RaWjRyU3RsT1FIUjJYSEIyNjhWTHp4N0MtS00zc3IzUnRvb3FQTDhSUVJoRmtxNWoyaG1JX1ZIb25GemxtZ1U5V2ZzdkIwX3MtV3pXRHBrUGNYYjlDZw?oc=5"
     },
     {
-      "text": "[AI 응답 실패] ISA 납입한도·만기연장 ‘유지’ 검토…고소득자 부당 세제혜택 거른다 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBrNzNQTW1yVXdLbFpFNkZFNDlrOUw4djFjY2toRFVvUzdfS3hIY3hfdzVYazUydEV4Rm9VOC0yeFhjLXBHakphWnVTRDR0anFvUzNrTVYybFlCVmd6ck5IWXB5YU9xTWdqcEtVQ3VnaVFSZw?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] \"스팸 걱정 던다\"…롯데百, 보안성 갖춘 메시징 서비스 도입 - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zbTYxcnBfdFVBelltNVRiVUVabVpRVEFVdnkxMGJmek1XU0dCdUZNZHR0VVZZTS1VZHE0czlOVUY3N1A2Zm01azNkbTdVZVdXOXhyUVE0d1lEWFXSAWBBVV95cUxOZ0dMZUdyaHo4T3lKYU9oUkRnUzNnaGpoeWhhT0tMYV9qYkxNRU1ZUkpyUU1xMEk2VnV0Ql8wejFmVGxWdTVDWE0yclBZTUNTZTIwMWxXcVJBaDFhMXU0YVc?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 결혼하면 못받는 보금자리론?‥청년·신혼부부 대출 문턱 낮춘다 - v.daum.net",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LY1dVczl5NWxvQ1Q3MlROSGVIVHhLTnNHV09vRGNzS0Nwb09URElmTVJlOGRTWEFnenNBNTJSVUlkcWJpRW5yWGdnbDNqYkE?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 달에 떨어진 스페이스X 로켓…다누리가 ‘쾅’ 전후를 찍었다 - 뉴스피릿",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAydi1nSUJyd1NJUmFKdXNjWklEOWMyaWl3NzYyQ1Q3M2ZXQ1BfMGEtMFAzRDNiT2NQcFFfR0NRc0VSMDE1bDhIUDdrSEJoaS1SRVd4aFktZ0l3bDdSS0M4eDFHQzd0ejAzX3Jn?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 뮤즈엠, 글로벌 아티스트 IP 전시 사업 본격화…'엔하이픈' 전시 서울 개최 - 네이트",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9veXlNQjlNbWZyU3VZaDFwOVg4NnFfZHg5cHZFZVV0bTRWbUhPRFVJMXhPcl9HV3BwYUQ2Z1hEQ1ZUZ1QxXzJXbk54VnlJM2l2Y3JR?oc=5"
+      "text": "[AI 응답 실패] 오픈AI, '리눅스 전용 챗GPT' 전격 출시 - 테크42",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNLUk2RjV2N3hZdnRwVlFjZWdqYXhsSlhWQmYxMFlzeDE1S3E1R2JHdkFYM28zeGtJUjAwTTh2aEdNSUxFMDc0bkNDd0xuQXJUZ2JycU5PQklzZ0JYdFdCNEt5clFDOXpnYTJKOWxqaU1MeG9tczJiYmpfQzNKNkQzVWZxQ005YWZZRHlaMGI0NktvWkF0ekJPa2tOSmEwb2xqR00ycUgyM2w5NEYxR09LSDlxMHpnLWtUM0dpbEN2VWxBUzhDSjNQOU9mT1JET0lCNlN3cWZzZ0JZYk9S?oc=5"
     }
   ],
   "english_opic": "영어 표현 데이터를 불러오지 못했습니다.",
   "japanese_sjpt": "일어 표현 데이터를 불러오지 못했습니다.",
   "tech_papers": {
-    "summary": "논문 트렌드 요약 데이터 생성 실패",
-    "papers": [
-      {
-        "title": "Entanglement Mpemba Effect",
-        "link": "http://arxiv.org/abs/2608.07465v1"
-      },
-      {
-        "title": "Surface Equilibration Mechanism Controls the Stability of a Model Co-deposited Glass Mixture of Organic Semiconductors",
-        "link": "http://arxiv.org/abs/2608.07320v1"
-      },
-      {
-        "title": "Dynamically reconfigurable THz quantum walk comb laser through subharmonic excitation",
-        "link": "http://arxiv.org/abs/2608.07308v1"
-      },
-      {
-        "title": "Flip-chip integrated superconducting qubits using electroplated bump bonds",
-        "link": "http://arxiv.org/abs/2608.07306v1"
-      },
-      {
-        "title": "Quantum sensing of radiofrequency fields using cold Rydberg atoms in a super-molasses trap",
-        "link": "http://arxiv.org/abs/2608.07260v1"
-      },
-      {
-        "title": "Crossing over universal scaling laws in two-dimensional driven dissipative condensates",
-        "link": "http://arxiv.org/abs/2608.07242v1"
-      },
-      {
-        "title": "Net and Hidden Spin-Valley Locking Enable Ultrahigh Hole Mobility in Covalent Bulk WN$_2$",
-        "link": "http://arxiv.org/abs/2608.07097v1"
-      },
-      {
-        "title": "Roadmap on UV-C photodetectors: materials, applications and industry perspectives",
-        "link": "http://arxiv.org/abs/2608.07049v1"
-      },
-      {
-        "title": "An ionic clock qubit inside a circular Rydberg atom",
-        "link": "http://arxiv.org/abs/2608.06988v1"
-      },
-      {
-        "title": "Ultralow p-type contact resistance for ultra-nanoscaled 2D-materials transistors",
-        "link": "http://arxiv.org/abs/2608.06793v1"
-      },
-      {
-        "title": "Emergence of Bogoliubov Fermi Surfaces in hybrid Al/InAs heterostructures",
-        "link": "http://arxiv.org/abs/2608.06553v1"
-      },
-      {
-        "title": "Fundamental limits of parameter estimation with heralded optical non-Gaussian states generated from Gaussian resources",
-        "link": "http://arxiv.org/abs/2608.06239v1"
-      },
-      {
-        "title": "Harnessing thermo-optic dynamics for frequency-agile soliton microcombs",
-        "link": "http://arxiv.org/abs/2608.05932v1"
-      },
-      {
-        "title": "One-dimensional Dirac modes in the core of a pentagonal topological crystalline insulator nanowire",
-        "link": "http://arxiv.org/abs/2608.05908v1"
-      },
-      {
-        "title": "Tuning the Optoelectronics of Mixed-Semiconductors through the interplay of Quantum confinement and Stoichiometry Engineering",
-        "link": "http://arxiv.org/abs/2608.05890v1"
-      },
-      {
-        "title": "An Open-Source Power Measurement Platform for System-Level Semiconductor Testing",
-        "link": "http://arxiv.org/abs/2608.05888v1"
-      },
-      {
-        "title": "GRAVITY+: reducing non-common-path aberrations for sub-10 μas astrometric accuracy",
-        "link": "http://arxiv.org/abs/2608.05751v1"
-      },
-      {
-        "title": "Dual-polarization control of broadband nonreciprocal thermal radiation by combining local and nonlocal metasurfaces",
-        "link": "http://arxiv.org/abs/2608.05640v1"
-      },
-      {
-        "title": "Magnetic susceptibility of diluted magnetic semiconductors at low carrier densities",
-        "link": "http://arxiv.org/abs/2608.05620v1"
-      },
-      {
-        "title": "X-ray Driven Trihydrogen Formation on Silica Nanosurfaces",
-        "link": "http://arxiv.org/abs/2608.05590v1"
-      }
-    ]
+    "summary": "논문 데이터를 불러오지 못했습니다.",
+    "papers": []
   }
 }
