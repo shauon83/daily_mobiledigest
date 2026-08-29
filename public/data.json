@@ -1,147 +1,71 @@
 {
-  "last_updated": "2026-08-28 14:53:53",
+  "last_updated": "2026-08-29 12:26:50",
   "stocks": {
     "삼성전자": {
-      "price": 257500.0,
-      "change_pct": -3.2,
+      "price": 257000.0,
+      "change_pct": -3.38,
       "trend_5d": [
         257000.0,
         257000.0,
         261500.0,
         266000.0,
-        257500.0
+        257000.0
       ]
     },
     "SK하이닉스": {
-      "price": 1676000.0,
-      "change_pct": -3.1,
+      "price": 1653000.0,
+      "change_pct": -4.43,
       "trend_5d": [
         1670637.75,
         1677636.25,
         1687634.12,
         1729625.0,
-        1676000.0
+        1653000.0
       ]
     },
     "Micron": {
-      "price": 935.39,
-      "change_pct": -0.32,
+      "price": 932.86,
+      "change_pct": -0.27,
       "trend_5d": [
-        966.78,
         910.43,
         932.97,
         938.4,
-        935.39
+        935.39,
+        932.86
       ]
     },
     "TSMC": {
-      "price": 427.3,
-      "change_pct": 2.3,
+      "price": 417.52,
+      "change_pct": -2.29,
       "trend_5d": [
-        418.95,
         410.12,
         417.41,
         417.69,
-        427.3
+        427.3,
+        417.52
       ]
     },
     "NVIDIA": {
-      "price": 227.98,
-      "change_pct": 8.74,
+      "price": 217.55,
+      "change_pct": -4.57,
       "trend_5d": [
-        214.72,
         208.48,
         213.05,
         209.66,
-        227.98
+        227.98,
+        217.55
       ]
     }
   },
   "exchange_rates": {
-    "USD/KRW": 1375.7,
-    "JPY/KRW": 8.6,
-    "EUR/KRW": 1600.5
+    "USD/KRW": 1375.67,
+    "JPY/KRW": 8.57,
+    "EUR/KRW": 1592.8
   },
   "news": [
     {
-      "text": "[AI 응답 실패] 민주 “조희대, 대법관 임명 제청 자진 철회하라…불응하면 후속 조처” - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBuaUJWekhmaWNsd1dHaUl0aWJ6bVlvcktObFRPTnZLc0ppQzR1R3BONnA0UmhUU1hUZzdQZDdxZE5vWmgtYVN3aEJSaFpZWmh4YXp2TU5icHV5Y3RqZ01fTkxoZEFkV2c4Sk9JajVBNHVhNmNa?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 李대통령 지지율, 3%p 떨어진 42%... 역대 최저치 - 조선일보",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSDgtVUlVV0lpQldsc0ZJSUZlcVdrNWJabXY4bzJQdzl4LWFtdHExMHFrMVRJeGxyU3EzWGpJTkxSc1lGbEtTMU13UHY4QlpGS29hVlRrRzBFRE9aT0ZOMW5hV2NyOUE3ZUVGM3FYVlVtU2hOVFhpcEZSQWlRZXFBdFVpSXVDcDd1?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 이번엔 中이 비상…“물 300만㎥ 거대 호수 발생, 나흘뒤 붕괴 수위” - 동아일보",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84ZG51V09kWEZkUS1YM0cwTGRNQUY5VEhYOEFEcUR1YlNCcURjMUpkdXlvVTRtVlJWR2lvcmdXaWRGd2pZSGl4WjhvaFZkRUlGMFczZzgyenRwRkM1T05pUEtaSkFqcEdLVXBfVld4R1pwd1nSAWZBVV95cUxNd1duOVh0NGh5cXhOLWFXZDNldlhBaXVsMXk3NkJSdjBHcS12bFo3bF9aZDlPdVpLV3JMMzJMb0xHMzdSQ3FSUnBSZlMyd1B4SC1JVExGZ0U5R2xwU2QtTmNKNHAtamc?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] “모든 가능성 열어두고 수사”···제주 104일만에 발견 장씨 휴대전화 포렌식 ‘사인·허위 종결’ 의혹 규명되나 - 경향신문",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuMzBWT0UzOVNEWjVYX2pHMVNzcVYzQXFaM1lkWmgyVjJHYnNCalhwNUgwQ2J3b09uWmJ0MHNONFFaVzdsMk13SVAtZkJnZXBiQjVWY0Njc2VnQdIBX0FVX3lxTE9pMzBZcl9zUnVvR2hVQXB5dVV4MEdMSTRZbmNmUHhGOWgzQWtXTFYtdm9xWHYwV3g5V3ZxVEVBYnpVTkFfUTAtZU9fbDJhZnY2NHltWlhZOVNJNHlaQlNN?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 유학생 살해 중국인 대학강사, 사이코패스 검사 거부…주검 일부 발견 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBxQWhvZjYxYUhkcDQtZVNMOGt6bURfNUNxWERCRFJ4R25NODBqTG9kR1ZIMDBzVkZvaENVdVdGUFFTZ3d2M2pleFhvcEhlMnNDaDB3M200RzZyY2ZGcDFkbWpJQlY?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 주말 전국에 장대비…곳곳 시간당 50㎜ 폭우 [주말 날씨] - 매일경제",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA2RTFxRm5sa284ZUgzWFdQMjNDa1FJY2wyT29xYU9RTXF4M05ieTlRQlJfSXZ5QlZnYXRubzlheW1ReW0xdDJ3cGdvS1JoYkZCa1BOSA?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] [속보] 천안 페인트 원료 생산공장서 불‥3명 사망 - MBC 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92N2ZWUlkwdkRXSUJaQ0RfallnV2pvc2tBMnFUWEI5eG9SYWtPenFyUnlMdzVHc2xzMkstS0xrd1V4SmRqREhFeGhxN0R0MUxxZlFEb1h5R2Flem9yVlVLdDFwd01xZWU2SEt4YUl1YWFtWXpZb0VF0gF3QVVfeXFMTlRobmxtSHM0WDh1UWNQOWE3YWZjcHhYWUhOdzVMM0tteDh4VFpnd0t3SkJrTUtDVENFZGxMbklaNl9GYlhRbldabmRyVWxwMTBvcXAzYTB3OVplLUdBTHBNVW9SZWRISGxxZWgxUC13Rk9pZENhWEk?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 김한규 \"정청래 공개 비판한 김민석 표현 방식 아쉬워\" - MBC 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNN1Q3Wm9EazlhemFaVU5EUE9XY1J1aHpDT0RrN2FndjFldzdtbGg1UzByZmtLd0ZKLVF2R1MyWmJ1VnRrM2o0VW5SQTMzVTFib2dQNjJJS3NHNDBSQ2ZGTXdoenpZbWNORWFTNmNZTFkwZWt3UG9rVtIBeEFVX3lxTE9zTTlldXhtQy1KcGVicWpTdEJtbURzRmowM0JCM3lsc1B2R2dYZVBlVnF0VVlFazVMdGZBRTR4ZG53YTYtc0VpeVQ1LVJmVGZ3dWhqRzhtWmY1UUNhS21OZ0djNWh5bEpHaEF1ZHVoWVFKSHJvMlBBOQ?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 경기남부, 최근 3년간 소재 파악 안 된 실종 55건 - KBS 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1sSW1LeVNKZE9zY2JJSHlfUGxBWXltbU9LTDlIUXNocnZlRHdyRXlrTDVfb3YyX1BjUG05dDRoamtRblBMMUN2X1JCeVJoclZLelJ0UnViWk84cDQ?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] [속보] 한미일, 내달 7∼11일 ‘프리덤 에지’ 다영역훈련 실시 - 매일경제",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1qdUNaRHRBUVBwaXRSaDRCU0podkU0ZWpMTk94VHhWUUhpUndxQ1FaSk12WVZkc3g3dkx0UlJWYVluMEczeEFlYnNtd0xtVHAzUWc?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 트럼프, 캐나다 떄리기 격화...'온타리오호→아메리카호' 행정명령 - 뉴스핌",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBkUHF5cFJuUzV6d3h1NVNseFdDM2dGS2hvZmw1ZDNtUGJOWUUtcU9MUFM0T0FCb2NWay1WMTRadEtCZHN2RVpSVXA1QXBUOHd1R1dLVV9STGJkZDdS?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 美, G20에 \"대이란 제재 동참하라\"…중국 반발에 공조 '험로' - 노컷뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5GUmYxODdyckF4SEF5QkQxQnBza2JIVXJUSlpvMEFyQUl0Wkg2OTY3cDFBRDhQWG9DZjBfM2IxenZuTUU2cXRwbktkR0J6SlF0dXc?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 이란 안보 수장 “호르무즈 해협 개방 조건 정리 중···트럼프 아들 암살설은 거짓” - 경향신문",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAyalN5Zk9kRG9OR3V4U2dhNUZkalBMQUtUNnhZbHIxV09mdUdial9yN2I4clN3Z21URWYtQ0h4cV9xY2cxR3BFMHo4SlhCQzRYbndsMWNoZ2c4UdIBX0FVX3lxTFBWSkc5UmRiYldlQkdTaXZrR1J4SFI3alJ1WFBNR2JabFNxN2I4bGdHQmxqTE0xLWQ0YmNRZGhzUVBodmZLRW5NcmJMbHdJVGRkZW1YOFlNQzJuMzhscFRN?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] \"CIA국장, 러시아에 절망적 전황 전하며 종전협상 촉구\" - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Kc2RWQWh3YUJuZkp2RFp1V0c1Nm1VbjYtd3hxX3ZXeG90STJ4UEJLdEE3NW05anZkd1B0Z2pxNlFSa3V2RDR0UTRxYi1fVWpzSWI5T3dtMnl5OXPSAWBBVV95cUxOM2lqSmhNWFlkREx3dF9USnlrcmxpTjNScjJmVmxxVVZtVUlmVVJON2sxdVUycFZxcU5QYm90b1pOOXQ2bjh3TlozOUpiZGpJWUxubWctQ19zRFNFZHdLbHA?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 이틀도 못 간 엔비디아 훈풍…삼전닉스, 무슨 일이 있었나 - 한국경제",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pdlNrZ1E5dWU0VExYbjJ0WWtDQldsSVkwZEYwMENOS0xFRHF2Y0c5dzJWWWwtejZqMFBFTnp4c2ZoYWJVTWM1cWdKSlhzS0xBRDRuclR4TlNzdw?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] “한 달 대출 이자만 수백만 원”…정기 예금은 3%대 요지부동? [잇슈 머니] - KBS 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0tdEFLZllCbXk2eWYyLUtGWnlQYUYzY2laVjNSem1yRHlGbFEtNEZxREdkQVVlVHpoZ1NDOFFOZjBxLXI0eXd4MUpJOExYdjRobkMxS2tBRW0wM00?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] [속보] 정부 ‘모두의 AI’ 사업자로 SKT·카카오·KT 선정 - 중앙일보",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB2WHczY1NObUdjRHE1eTgweFFRNG1zSHZsOVJrY3dVSGdoN1Azd0x3cTVXTUVVM3lVel8wXzlyVy02RlI3WmFrWV90d3RUTmsxbkdhWmtB?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] [뉴욕마켓워치] AI 논란 날려버린 엔비디아…주식↑채권↓달러 보합 - 연합인포맥스",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE12anFtUEtPRHRCRjlJbzV6djR1X3M5NUtmRDhUanNGTUQ2ZlNPNmtQaXJ0TDlCcUdQRzVfeGpTMjhfeUh1RTNDTDBJRU9mMG5oTnQ2RjRmTXJyUlk0aWRzRTJMODdOZnpVRTZQb1YzaXY?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 락스타 ‘GTA 6’, 넷플릭스 손잡고 게임플레이 첫선…11월 정식 출시 - 서울경제TV",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1QMEN0OWdoTU1EVEtOUm9PNERwbHBfSUJTR19xR0FJaGVsUzU4OVZ2d0d0ZXNmV0hqb2hTcnNBdTMtVldudmk0OHh2VDRwZTBMUmFiMV92a0VKQ1NNRVBNenlSbC0?oc=5"
-    },
-    {
-      "text": "[AI 응답 실패] 모래주머니를 달고 등장한, 내 손안의 '엘든 링' - 인벤",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9wTXNzYXR5OGZsWVdsRjFXcFRMTExOdFRxbjNYRHZsLUNaalRDMXl6bHRuOGE3UE9aT3l1YnlCS2JFdFhGYzVnY1dSaVM4OTdDOGlMb1RVMXVXRG1SMHc?oc=5"
+      "text": "뉴스 데이터를 불러오지 못했습니다.",
+      "link": "https://google.com"
     }
   ],
   "english_opic": "영어 표현 데이터를 불러오지 못했습니다.",
