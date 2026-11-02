@@ -1,26 +1,26 @@
 {
-  "last_updated": "2026-11-01 09:36:27",
+  "last_updated": "2026-11-02 10:09:58",
   "stocks": {
     "삼성전자": {
-      "price": 225000.0,
-      "change_pct": -3.02,
+      "price": 222750.0,
+      "change_pct": -1.0,
       "trend_5d": [
-        213000.0,
         222000.0,
         242000.0,
         232000.0,
-        225000.0
+        225000.0,
+        222750.0
       ]
     },
     "SK하이닉스": {
-      "price": 1418000.0,
-      "change_pct": -7.08,
+      "price": 1436000.0,
+      "change_pct": 1.27,
       "trend_5d": [
-        1275000.0,
         1341000.0,
         1487000.0,
         1526000.0,
-        1418000.0
+        1418000.0,
+        1436000.0
       ]
     },
     "Micron": {
@@ -58,90 +58,90 @@
     }
   },
   "exchange_rates": {
-    "USD/KRW": 1335.1,
-    "JPY/KRW": 8.47,
-    "EUR/KRW": 1495.9
+    "USD/KRW": 1338.54,
+    "JPY/KRW": 8.46,
+    "EUR/KRW": 1494.0
   },
   "news": [
     {
-      "text": "[AI 응답 실패] 정청래, 유시민 발언에 “독립운동도 노선 여럿…얘기 들어주고 고개 끄덕여줘야” - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5Wa3NpQ0FzM04xNnBnOGRLRW5JUmhuazhGNURmMWo3Rll6R01xOThuRmlrVFFDcFNNQmNtRjE4LU1ucjBtMEp1Qk40aXBUVVo2ZDg3V1QzU1dBTDRCZ0F1UExzUTFhMWViRG82b2pudS1XTmhE?oc=5"
+      "text": "[AI 응답 실패] 깐깐해진 공소청 검사, 이삿짐 덜 푼 중수청, 수사 늪에 빠진 경찰 - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNRjFqZlduUFh5M3BObXV3bUo0a1FhdGFiODA0c2RaVDRETEpLY2xhd1VnQlJNbXo2NktTaWdKZXI3SUhNekJOZXQ4dDJKN2RRUVdyTGY2eThGUWRGbk54N2w1OFhURzYzaFp4SUdMRGxSVzRlMVZGbVlXSGJRVDJRZVZkcVYtOFk?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 美국무, 韓의원 비자 문제에 \"수십 년 전 행동 관련한 이슈\" - 조선일보",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYmNiZXJBa3lTWjJLRjZQazA0cG1iT1FjSC0yamJ4dDNaMEdnMHFCV2lnaWd1cV8xbmZMd0ExZFdCWDVZZXhvNGgwTF9nOXF4SlhZZ3phTWU2T3V6ekZYZ1ZYZk5OSWc1T3dBQmlyVjRpME1pZTFxZXRDWEhLdE1hQjhRMGg?oc=5"
+      "text": "[AI 응답 실패] 이 대통령, 오늘 ‘821조’ 내년 정부 예산안 시정연설···취임 후 네 번째 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBBWV8yMF9mTGRVOFZ1VHdyS2NsdFk4bkZzWnlyX0h2bjA4dzVmVzRNYlpHTThKcDFkVzdtcnVHbGFvY3hvazdjcW1ZQkFYMHRXTW1WWXJrWFRrZ9IBX0FVX3lxTFBtU0U1RXVEdjZxRmV5SnloQzlqR1N4djZJeEVxOEVkUFF5Q3ZjOXJMWWUyY0RKTHcwdnp0VURyOWxRZW5HSVBYM18yQTl4LTlidzRiaVM1YU5QcU1QTTN3?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 북, 전술탄도미사일 집속탄두 위력 평가...\"표적 초토화\" - YTN",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9rbUVNUkdubGlCcUh3OHkzVE13MUV5UjRrSEZ1Ri1sOTJBNVJJNi03azBZazB1NW1FeWZlXzVhNkFOa2cwM1NrVEtxVzRHTGZkeVNEY0tEd20zd3o1YWc?oc=5"
+      "text": "[AI 응답 실패] 이란·카타르, 사흘째 종전 협상… 루비오 “이란 추가 공격 미결정” - VOA 한국어 홈페이지",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fSjdvWWNRV0NOWmNmR2duTmR6ME5xQUhEck9McTVJMzRnamFyUkpHM0NlOWZpY3dsWXBQNE5uamJOdWhmS0Vfc1FCN1MxRHBW0gFTQVVfeXFMT3FicDM4R0hsNXdHVEdGU21jUHZtdlI4Sk1xMGtiVmpMX3d0elZWZXhDN3E4REEzMzBfZFFTZkpwazVCbE1SN0dUZl9xV3pQdW1QZGc?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 트럼프 ‘핼러윈 에어포스원 저공비행’ 이벤트…테러 공포에 떤 시민들 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWV9FdWRzS2NmODhrS2htMWlpYi1YMlhwOUYzOFdTWlJoRm54d3hGWHl0b2ZCaEhLcGpBUVFJNXk5WnJXWGRIM0FFM1pfMlJMR1JmbFBqN285ZXFVaE9jVkR2TDhEUy1CTE9yd2hUbGR3Vko3aVR5a2xfLTBGNHJ2WkJR?oc=5"
+      "text": "[AI 응답 실패] 美, 5200만명 사전투표 역대 최대… 민주당원 비율이 11%p 더 높아 - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQYk9kY0FTbklhWEZsN2pOanFkbGdmNW1JX2oxbGNrS3psS1lDdHM5dy1Cb2QyZEx1S1o3SEZhSlBiejU4d0tneXdmQXNfWC1NVHoxaVhtX3pTdHV6UEZzRzN5UnEzbENIU2w4LVRKckZqclNMeGZfc2hPZzV1Z2VPcmZnYlBJMUg1MWlqbndNOE5vSXoyOEk1a18xZHVsQQ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 오늘도 쌀쌀한 가을 날씨…대부분 지역 비 - KBS 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1wdjB0dm15N21OMG5mWk5FNFoybTZBaEVUbVBfamZWV050X2lKVmtzYUM4aldyZEd1OXJrZUx0d0RVM0JuWDNjSjNEOFZyZHluUlZXa1lrVUlDdlk?oc=5"
+      "text": "[AI 응답 실패] 화염병 던지고 최루탄 응수…프랑스 시위 3주째, 32만명 거리로 - 한겨레",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUHd0aXE2SkhPRk45Wnd0eWYwSEhmeEJPT0xMakYtZldrZU9WLUhVMGxVNjRtd2ZtSFhCUHlyUUtfdVlpazBNZXRVOHBNazZPOTFobm5lbzN5UTFZbW5tTGRyaHRZbFJwRlZVTnVyd0ZGU0RzZVhLZHhTWEtJbzZXT0tn?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 민주당 “대통령 SNS 단편적 단어 물어뜯어”…비판 보도에 ‘진의 왜곡’ 공세 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5NTFptU0FybDM5RGRMQXJaX0MwQWY4eVUxUC01aXl5QnU5SzRsZ0NjR2N0Mmhmdko2WUQ4X1RpWnFleWFwYmYzdnk2TGExRVczM3dySDBFNEQtNEJUOEdMSDk5S01FZGU4NjBYaFVmNEEwTzAt?oc=5"
+      "text": "[AI 응답 실패] 트럼프 어휘력·연설 발언은 ‘초4~5학년’ 수준···더 단정적이고 저속해진 건 고령 탓? - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE15M0Z1UVF3SGZWUGkxMHVOLVhFdE1GOTl4dEU1UTBMdU9QbnJvZmZlZ3NCVWFsTWxpaG40eFVrUjZadkcxZVY4d2tRdzBYZ3hXUjFSQkpEY292UdIBX0FVX3lxTE1OejlYWXg4UVI4d3dWNlV4bm05Tl92SExlVHR0bGFZZ1dQZ0Q5RUZmbVpva0otNElQbkJqR2Y5YXEzLVR2T3VDZjdMXzdSX1Zsd0drNWNtNnBkUVBXVUFv?oc=5"
     },
     {
-      "text": "[AI 응답 실패] [포토] 장갑차까지 등장한 이태원 핼러윈…축제와 추모가 한자리에 - 한겨레",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8ycHZMZmNicHNjeEJfRkc3VE5YajVJT2dlclQxNkVSNElJRVJGUTZtdVVLS3p0TDNVbzdleUxjZHA5cHRneU5VeHpMNTN1QzRNQlVJTWVTV05WRDc1RnV0N254RXVWR3FiMFVBZ0Fxd2lUdw?oc=5"
+      "text": "[AI 응답 실패] [여의도앨리스] 장동혁 연임설에, 당권·대권 분리 규정 재조명…오세훈·한동훈은 대리인 내세울까 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ibWdfLTFpU3BJQ3ktUzA3dmpoVEI1UzBZZ2pmVG84NlBWd29DNmZnZHlmSXNhOFZoMG9FQ19HRGZROFBkQTh5RFp2aGVSR18wREVZTkF4R2haZ9IBX0FVX3lxTE1Uc3c5MFBYa29TV1V2MFlUelZMemlPZ3o0dC16aHcyVU81VGM3MjRaamZZM3Y3QkJwSW9MYVNRaER3bEFQZmFkTUc5Z1NQVHczYnUyV0lFWFczd3BfMUJZ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 정치권 단골 논란 '대통령 골프'...공방도 찍어낸 듯 반복 - YTN",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBqOXlmekw0WUM1RnBxa0Fnd1gyNHV0N01FdmJNM0taUkdCZzUxTWw4ai11UHF5X05nODdlazFxT2Q2ZWJrNGI3Yy1Ha0kwTWx3T1A5RmQwV1JIRFhja1E?oc=5"
+      "text": "[AI 응답 실패] [날씨] 새벽까지 전국 대부분 비‥오전부터 맑아져 - MBC 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9aSjdQZzRhb0Q4Z3NiWkJreHlGa1VJMXhSSnJ2Y1QxU1FUTU03anBKclV1LUp3YXJabHFJaEUxX3R6WjFlOElOdDVHOXRmSlZNaFNBZl9LNWlONkFMdWlWaGV3aV9wVUVmTVFZUWdRNjVwZzZNd3hF0gF3QVVfeXFMTlBKV0Y1WGxqdkR3WG1fREJyZlVTS1RrRFRXZlpWLVZQODNjQTd4bUIycTh2WjNQNC1DQkQ2WjdKMWV0TERYNmgwbHk4RmE3cFZyRkIzMU9uMy1qM1BFVGVINzVFYkdhYlBaQUZMdElwbG1uWVl4aVU?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 조현, G20서 DMZ 지뢰 폭발 사건 설명…“남북 대화 중요” - KBS 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TSnB5NVlPY01TSlZzWjZZdTk2NUVtZkQtOWdRZTVxdl9QdDAzNUszRDZTaWxwMmxRdTk3dlZudXQweDJyUnNhU2NRTTk3cXlJWjdyWGV4dE9GVlU?oc=5"
+      "text": "[AI 응답 실패] 정점식 \"대통령 아들, 관저서 편안…청년 전월세 대란 남일\" - 연합뉴스TV",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kbmtIR01yMmw0Q05xcTJLTGxlUDlkRnUtX2xzS2hPZjJNNDQ5cEJrNEpZem5McHlRejVvbzZid25UdFV2TmVzNWJJT0tUYVhURFVtMzBwU0VfeWVHd21JeDBsM0otUDQ?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 미 국무장관 \"트럼프, 김정은과 대화 준비돼‥아직 회담 일정 없어\" - MBC 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5QZnhWb0dVdkhPeHpUOC1QTjdTLUVuYUlJcGVYODNTMkJ1QXo4THpyQmRkYjBKYWhONUxhbEtPaGxXSmFvMG5KYXlzMGIxbW1KaTJROGhhNzd6aWxPcjZLOGkxdjR0eXhNRVNlVlFVT0tVS2F50gF0QVVfeXFMT2VOSldUWjZxWU56S3FjOGdxYXNpU2gzNVJGaXdyXzQzUG1sZTJlZjJ2WlhrVU9KanhqN1RYVEdCcENOUHFVbzA2WWs3QUU4T1FHeXV5Z09hT2dEOWhleVhhWEJrTHQxb2p6c2FQU2RGdFNTemQ?oc=5"
+      "text": "[AI 응답 실패] 오늘 구룡마을 화재 추가 합동감식…원인 규명 주력 - KBS 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04dFdrZ0dhVUZsU2NoejMtSGNLcUthOEVuNGpIeUJIaHVQTFUwV2lkWjJveGJqS3ZlbXNJbjNoMkxwaGRBQS1HUXVzUEhEYXlNbVRoV05GVzRhb2c?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 트럼프, 선거 직전까지 강행군… \"개처럼 일한다\" 토로 - 조선일보",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZ0J3eXYtYlpOdE5kZHBXdGxhREVKVVd6YlFjeDJoVlZLdzdhR0Q0ekZTVzVtbFdmWW1kU0xXTTByc1N6VTlJV0VJX2psN3cwMWkxOHFVUEE0Q3c3OWZjUGN3U1JyMVFxZnlSSWFPN3NkZXNDT1pjRkdwc2EwalNnaThVeHA?oc=5"
+      "text": "[AI 응답 실패] 이란 \"호르무즈 해협서 유조선 2척 기뢰에 폭발…1척 화재\" - 연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDSHR3ajQ3R0VWMmUydXU5VEpTLUx4ajB6czduNDVrOVBGWHFPVDBweTd2UzU5T2J4QVlSR2RjQ3lvQnpGeHZDWXNhc2Uta2kxU3VBUlhLVmZKbFnSAWBBVV95cUxQeTBGSnpMWUNPam1LcTBtdkM1Q3VBX1pOTkpqbWdQV3NCV1JDa0M1YlYyeTRYR09SQ0ZyYnpzeFViV0xQaFpGRU43cHZQeGlUY2JxcUVmUnBHb2JyLVctbjI?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 젤렌스키, 에르도안 만나 \"러, 흑해 상황 악화시켜\" 비난 - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9mZEdaR2haVnRnT1ZmdVNmMlRqaURCSzVfSGhrS1JMdXlFc2Z3TjVSTHhwUXpOVDREalR0MmhqNzBCN2JhMEhSRHhFWDVuS3dfa1J3V2lzbm1sT1XSAWBBVV95cUxOaHFRaXVTUm9SVWxQMUJQeEZHTVhZY0NCQXlYdXJZd3J6RDZBN2NVSHZZOUhxY1h5TlIyVU1aQXQ5LUJpQl9HcndENklnOTl6aGx5T21RaFl3Z3lKcDdtV2c?oc=5"
+      "text": "[AI 응답 실패] “알래스카 선거, 공화당 패배시 확정 말아달라” 미 정부 소송 기각 - 경향신문",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1sX2RUUUFLS2V2YTFacVFQSzdMeTloYnNjczA5TGc1cjgzaXNCQVBqaWg0c3kxQkhwLVByN1ltVFNiTTY0Z3E2NG9PMXNuajNCakNUY3RheVRud9IBX0FVX3lxTE1iMVRJbHo5OTlDSThyQ3pHSjUyVWdWMEo3bS1aR2VQTDBEcHVlQUdsclBWdW1NcV9ta3dqTkRpZlhzSmZERkVybC00N0xFblM1eXFHRkUxYzBpbjZvemlF?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 美중간선거 사전투표 5천만명 돌파…공화후보 인신공격도 과열 - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1PSTNQSjZGWkN1SEcwdXB2NWlWNkl1NlFHYnplc2xXazlXQkFQYnpXR2FXX2ppSmhWc0NMWk9ib3hNTG1SOWJlU1NvY1g3cG9obndnNmM1MzREeFnSAWBBVV95cUxNbVdnSlNKclJhZlVleVBjWmROX2JVeFRzdHczWnYyeU1XckJrek5LejgzZ2VGZUpDTnNLZlZBb1o2NUxVSVR1aDNnV3FacnRGc2ZjQ2pUX0YxNllMYWt0cjU?oc=5"
+      "text": "[AI 응답 실패] 이스라엘 선관위 \"총선 적법\"‥네타냐후측 부정 의혹 일축 - MBC 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9EV0JYWHR2TnJjV204bVVIaVI0RElyWnlPOHVQUWRSYTR5bm90dVo4VTA1aUZVZHk2MkwxT25DV0JmYVlYMWRGZXQ2bWJJdnc1TW9ROHhoVnVwSkJxczF6Ri14SUVaaGZmTHpzcVRlM1V3ZG9J0gF0QVVfeXFMUGFSa1ZnSlFYZHpMaFRweXBidjBLeklWUU9YU1NPWEhENlphOGJ6SktNOWdpNlN4MkktdExjcW5CQnJ1WEVpRGFhNXBJX0hpT3hYOWpwU1BTYmM2RE9IQmVTRTM3MU9UcHBLN3hYc0tvUFJPNVI?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 미 국무장관 \"이란 공격 재개 결정 아직 안 내려‥외교 해결 선호\" - MBC 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBybHhlaC01RmRIaktfd3Nhc1pHV3QwTnI2Qm9LVVFKYmI2UVBEdU5DZmtuaUJUcm1HTkZIN3pLQXo4SW5mX3lLVG1UWVEzVTFNc0dRT3N0UGViVEdIM1RPWDI3LUFOaTZWNWZCMW84ekQ5MU0x0gF0QVVfeXFMT3hDSFFPMjMzZ1VZZjlLX2F1bjFsMFVzZkxVOXJYT3BzbjFkVWJ2MHVUTl9SV2k2Mm1hUnd1YUplTjJLQnJVV253ZjUxcjZSY3BMdndtWmx3XzU5LVBSbThKU1pmODVGcVhGcWtwR2o3OVN1LTY?oc=5"
+      "text": "[AI 응답 실패] ‘폭탄비’ 집속탄 또 쏜 北 “축구장 18개 궤멸” 주장 - 동아일보",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBDMXRKbWJSNFNhSnNRQ3ZkRlJBWVdGR2xNXzI0RllrSVE1SVhNUVRJTlRETE40N3ZYbVcyNnZXMmwxR2N4QzVFTkU2aF9Ya0hrM1VSUTYwMnkzV2twaDJ6cmU0YXlGcU5LRlZIeFFUdF9LWVNpcWVr0gFmQVVfeXFMTmZPVGZ0d01FRHlUQlVMcWFYZ05VOEl5ZjQ4eFBKNGwzNC1uUkc4dFZ0Z2hGblI5cjFqNWlIOVhZOVVILUNFbEJEaVd6OFRreHdiUTF3OTV0blRHUzIwSnFldnJJS0xn?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 인텔 주가 29% 폭락…AI 거품 공포 확산에 미 증시 ↓ - KBS 뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6bVhrbWV2Q24zMlJHTGhWbWRsUzZfbmVrRE1UQUJhaklXc3hfVDF1X1FlZTlvblAycFhkTGRseWdsV1hWMjRiSTBYNlZ1ajNzU0hjQlRZa0V5YWc?oc=5"
+      "text": "[AI 응답 실패] 北해커에 8조 원 털린 바이낸스‥출금 재개 후 5조 원 순유출 - MBC 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBOYTZrLVBIWnZLYUQ3ZXRXTFBIQ2d6NU1xNDUtS0gyWWswdnRwZlUyTS1tV2xUY2dJUXUtY2lBN3pwSU03LUo0MEx3NFlXa1gzUzRnT0JkWVNvRGRGaDg2MXdKajFNTXduRUh6djhCSjg0WVh30gF0QVVfeXFMUFp4UWJQWFhXNEo5Y3dVTUdLNVBvSV8wWUxfM3BDTENpWl81TmZqQWZFcndMQ1VnSDJQYnl2azUwdHI4ZXVlWVZSOW15UUk2ajFrVjBLUnlmbGxfMGVkRWpwczVONHlZbnd3bmJPbVFLX3VrQnA?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 한국 수출 첫 9천억달러 돌파…연 수출 1조 달러 확실시 - 연합뉴스TV",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwLVFab2l0bGRXTWNReXZkMWhPakltWXJxRXNvVEd3RmV3RWRTVi1FdGdWSEZEUEI2VDV4a1VDbnVqZVByM09aMjNrd2dGQ2MwTHhVU2hjRGxfMG5fNndteHk0dEJsU0U?oc=5"
+      "text": "[AI 응답 실패] 11월 전국 아파트 4.4만세대 분양…서울 일반분양 2천457세대 - 연합인포맥스",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBBRkVsWFA0a0p4bkZuOUVEQklUUmdfYWtEckVjQ0VPS2wzV1BtUzdXMUhIQ0RPdHJhUGVxY05sWnhWZTdxcEhoNERJRG1GZTFsb2J5OGdpLVdybEhPVlJQNklxZVhNTVc3emluTC0yUUw?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 샘 올트먼 오픈AI CEO, 삼성·SK 회동…AI·반도체 협력 강화 - 전자신문",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1tVkN5WU9CLThhckJLUzBydDZraHRrYnhVQlFLWlgxZWtVYTVhdUN6UWFicEM2OG9ibkV1T21EVExfU2pnRDcyQ0h6c2dMUQ?oc=5"
+      "text": "[AI 응답 실패] [미리보는 증시재료] 美 중간선거·고용지표에 실적까지…코스피 반등 이어질까 - 뉴스핌",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5DX3N6ZVJQS2hJZmhLRk5USnAzY0thODRYZGNLMWx3dVJsOU0zOExtZmtNeDZXVTI2bUVWY0trVHVDTGtlVGNjMEw5RWZJTF9nSTB4RmhDMlAzSUxh?oc=5"
     },
     {
-      "text": "[AI 응답 실패] “강남 매물적체 서울전체 전파…반면 경기도는” - 문화일보",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE52NlFYWm5OZUNVS0NzbkhGMkdBc21NN3FQeXBtWGhveVBhSzBndDEyM1VCa3J6LWdnOEFqV1lqaDhqUHJGbE5Db1ZRYlJwNDk3?oc=5"
+      "text": "[AI 응답 실패] 코스피, 1%대 하락 출발…코스닥은 약보합 - KBS 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zMGtyTXRad1c4WlMxZTZ4aHZoTGRQVjdXei1PdF9Bei1ZMzhSdUJlYWlUMk5XWVBnS0VmQ05zYlNJNW1Ib1BzN056Q0FpcmdlcXNSLUduckxhRGc?oc=5"
     },
     {
-      "text": "[AI 응답 실패] [위클리오늘] 산업일반 소식_신세계V, 스타필드(10.30) - 위클리오늘",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9mSmREcWhTQ3hWT0xnZF9TWU5lTzJicW1yQXU0Q1FINVY1OVdpRDJXeGZNeFlSTzJDSXFYdFk0NE5qMzdtM0YzQmJUbmFZc0VWRlBCSzdNRENPcHItR0ZaYmRZdTNKWkJwMDlYdVlB?oc=5"
+      "text": "[AI 응답 실패] 셀레스트도 엑스박스 판매 중단…인디게임사 BDS 보이콧 확산 - 지디넷코리아",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBPMzVDdDVPNmFrSDVSTVNBU1RPdlJ4VUNtbVB5Qk0wdndQeVVPcXpkck9fbFItSEtuUGdwakJhSzRoRFhMNU11UGVicEdsaEVtalNjZmdR?oc=5"
     },
     {
-      "text": "[AI 응답 실패] 아이폰 듀오, 접으면 18 프로 맥스보다 훨씬 짧아 주머니에 쏙…무게 차이는 5g뿐 - 위키트리",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wWVVzWDY2dHFKUElXNEk1czcyc0FZSTF1YTZWVGNMSE9YU0o1UENTdzh0RWtQSnJXODZOZ2lCdGVtWm15VEE0V01PNFBteEllWFlXNUZB?oc=5"
+      "text": "[AI 응답 실패] 닌텐도 ‘젤다의 전설 40주년 애니버서리 에디션’ 언박싱 - 게임뷰",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE42d21LTXlFSGZFVDJzRFVFai1neVE0cHpUZ3poY3JwM3VCeHJMTUZ4TG41TkxfX0RVNm8wNHNsdjRQNFBsaUE0NzV0TnhHZ280TGpIN05CSlF2TGlPbmZ3SFgzU2EtR2lWeUE?oc=5"
     }
   ],
   "english_opic": "영어 표현 데이터를 불러오지 못했습니다.",
